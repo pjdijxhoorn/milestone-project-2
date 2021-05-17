@@ -1,4 +1,7 @@
 /*----------Colours*/
+.menu-button-color{
+    background-color: orangered;
+}
 
 
 /*----------header*/
@@ -19,5 +22,18 @@ font-size: 0;}
   height: 60px;
   text-align: center;
   padding: 0;
-  background-color: orangered;
+
+}
+.menu-button a{
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    font-size: 20px;
+}
+
+.menu-button a i{
+    padding-top: 11px;
+    display: block;
+    color: white;
+    font-size: 20px;
 }
