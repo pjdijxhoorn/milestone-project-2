@@ -61,6 +61,19 @@ margin-bottom: 0;}
 .main-explanation{
     color: white;
 }
-#table p{
+#table {
+    color: white;
+}
+#error {
+    color: white;
+}
+#add-Btn {
+    background-color: green;
+}
+#rem-Btn{
+    background-color: red;
+}
+
+.table{
     color: white;
 }
