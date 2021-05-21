@@ -2,7 +2,7 @@
 .menu-button-color{
     background-color: #ff9900;
 }
-.main-area-color{
+.content-area-color{
     background-color: black;
 }
 
@@ -54,16 +54,14 @@ margin-bottom: 0;}
 
 /*----------main area*/
 
-.main-area{
+.content-area{
     height: 600px;
     margin-top: 0;
 }
 .main-explanation{
     color: white;
 }
-#table {
-    color: white;
-}
+
 #error {
     color: red;
     text-align: center;
@@ -79,15 +77,13 @@ margin-bottom: 0;}
     width: 140px;
     text-transform: uppercase;
 }
-
-
+/*----------table*/
 
 table, tr, td, th {
     border: 1px solid white;
     border-collapse: collapse;
-    width: 80%;
     text-align: center;
-
+    color: white;
 }
 
 td, th {

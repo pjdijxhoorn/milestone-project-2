@@ -13,8 +13,9 @@
     <title>Coach Help</title>
 </head>
 <body>
-
+<!--nav bar-->
 <header>
+
   <div>
       <ul id="nav" class="list-inline menu-container">
           <li class="col-4 list-inline-item menu-button menu-button-color">
@@ -29,7 +30,8 @@
       </ul>
   </div>
 </header>
-  <div class="col-12 main-area main-area-color">
+<!--content area-->
+  <div class="col-12 content-area content-area-color">
       <p class="main-explanation">
           welcome to this site. This site is meant for coaches and managers of fieldhockey teams.
           However it may be used for other sports as well.
@@ -39,7 +41,7 @@
       </p>
       <div>
           <form>
-            <input type="text" id="nameAdd" name="username">
+            <input type="text" id="nameAdd" name="username" required>
             <input id="add-Btn" type="button" value="Add player" onclick="addPlayer()">
               <input type="text" id="nameRem" name="username">
               <input id="rem-Btn" type="button" value="Remove player" onclick="RemovePlayer()">

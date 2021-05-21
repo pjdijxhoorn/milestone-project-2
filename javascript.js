@@ -1,4 +1,4 @@
-let players= [];
+let players= ["tim", "paul", "richard"];
 console.log(players)
 
 // the code under this comment is to add or remove players via button from the players array.
@@ -22,7 +22,7 @@ function RemovePlayer(){
         document.getElementById("error").innerHTML=`This person is not on the list!`;
     }}
 
-// code under this comment is to build a table from the player array.
+// code under this comment is to build a players list table from the player array.
 function buildTable(){
     let html = `
   <table>
@@ -48,6 +48,46 @@ function buildTable(){
 `;
     return html;
 }
+
+
+
+// code under this comment is to build stopwatch for every player
+
+function buildStopWatches(){
+    let html = `
+  <table>
+    <thead>
+      <tr>
+        <th>Players:</th>
+        <th>Time on bench </th>
+        <th> switch</th>
+        <th>Time in field </th>
+      </tr>
+    </thead>
+    <tbody>
+`;
+
+    for (let player of players) {
+        let rowHtml = `
+    <tr>
+      <td>${player}</td>
+      <td class="bTimer"></td>
+      <td class="switch"></td>
+      <td class="fTimer"></td>
+    </tr>
+  `;
+        html += rowHtml;
+    }
+    html += `
+  </tbody>
+</table>
+`;
+    return html;
+}
+document.getElementById("stopwatch").innerHTML =buildStopWatches();
+
+
+
 
 // code under this comment is to be able to input the text in add and remove player with the enter key.
 
