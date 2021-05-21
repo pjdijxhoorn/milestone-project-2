@@ -1,6 +1,7 @@
-let players= ["tom", "charles"];
+let players= [];
 console.log(players)
 
+// the code under this comment is to add or remove players via button from the players array.
 function addPlayer() {
     let add = document.getElementById("nameAdd");
     players.push(add.value);
@@ -21,8 +22,8 @@ function RemovePlayer(){
         document.getElementById("error").innerHTML=`This person is not on the list!`;
     }}
 
+// code under this comment is to build a table from the player array.
 function buildTable(){
-
     let html = `
   <table>
     <thead>
@@ -48,5 +49,15 @@ function buildTable(){
     return html;
 }
 
+// code under this comment is to be able to input the text in add and remove player with the enter key.
 
-
+document.getElementById("nameAdd").addEventListener("keydown",function (event){
+    if(event.key ==="Enter"){
+        addPlayer();
+    }
+})
+document.getElementById("nameRem").addEventListener("keydown",function (event){
+    if(event.key ==="Enter"){
+        RemovePlayer();
+    }
+})
