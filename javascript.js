@@ -4,11 +4,13 @@ console.log(players)
 // the code under this comment is to add or remove players via button from the players array.
 function addPlayer() {
     let add = document.getElementById("nameAdd");
-    players.push(add.value);
-    console.log(players)
-    document.getElementById("table").innerHTML = buildTable();
-    document.getElementById("error").innerHTML=``
-}
+    if (add.value === ""){ document.getElementById("error").innerHTML = `You didn't fill in a Name`}
+    else {
+        players.push(add.value);
+        console.log(players)
+        document.getElementById("table").innerHTML = buildTable();
+        document.getElementById("error").innerHTML = ``
+    }}
 
 function RemovePlayer(){
     let Remove =document.getElementById("nameRem")
