@@ -5,7 +5,7 @@ function addPlayer() {
     let add = document.getElementById("nameAdd");
     players.push(add.value);
     console.log(players)
-    document.getElementById("table").innerHTML=players.toString();
+    document.getElementById("table").innerHTML = buildTable();
     document.getElementById("error").innerHTML=``
 }
 
@@ -14,7 +14,8 @@ function RemovePlayer(){
     if( players.includes(Remove.value)){
    let number = players.indexOf(Remove.value)
     players.splice(number, 1)
-    document.getElementById("table").innerHTML=players.toString();
+
+        document.getElementById("table").innerHTML = buildTable();
         document.getElementById("error").innerHTML=``
     }else{
         document.getElementById("error").innerHTML=`This person is not on the list!`;
@@ -46,5 +47,6 @@ function buildTable(){
 `;
     return html;
 }
-let table= buildTable();
-document.getElementById("table").innerHTML= table;
+
+
+
