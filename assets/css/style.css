@@ -65,7 +65,9 @@ margin-bottom: 0;}
     color: white;
 }
 #error {
-    color: white;
+    color: red;
+    text-align: center;
+    text-transform: uppercase;
 }
 #add-Btn {
     background-color: green;
