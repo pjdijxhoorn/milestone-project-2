@@ -1,5 +1,6 @@
-let players= ["tim", "paul", "richard"];
+let players= ["Tim", "Paul", "Richard"];
 console.log(players)
+
 
 // the code under this comment is to add or remove players via button from the players array.
 function addPlayer() {
@@ -7,7 +8,6 @@ function addPlayer() {
     if (add.value === ""){ document.getElementById("error").innerHTML = `You didn't fill in a Name`}
     else {
         players.push(add.value);
-        console.log(players)
         document.getElementById("table").innerHTML = buildTable();
         document.getElementById("error").innerHTML = ``
     }}
@@ -50,14 +50,14 @@ function buildTable(){
 `;
     return html;
 }
+// code under this comment is to store the array data locally
 
 
-
-// code under this comment is to build stopwatch for every player
+// code under this comment is to build table for every player
 
 function buildStopWatches(){
     let html = `
-  <table>
+  <table class="t-table">
     <thead>
       <tr>
         <th>Players:</th>
@@ -73,12 +73,14 @@ function buildStopWatches(){
         let rowHtml = `
     <tr>
       <td>${player}</td>
-      <td class="bTimer"></td>
-      <td class="switch"> <label class="toggle-control">
-  <input type="checkbox" checked="checked">
-  <span class="control"></span>
-</label></td>
-      <td class="fTimer"></td>
+      <td class="bTimer">  00:00  </td>
+      <td class="switch"> 
+            <label class="toggle-control">
+                <input type="checkbox" checked="checked">
+                <span class="control"></span>
+            </label>
+      </td>
+      <td class="fTimer">  00:00  </td>
     </tr>
   `;
         html += rowHtml;
@@ -91,7 +93,7 @@ function buildStopWatches(){
 }
 document.getElementById("stopwatch").innerHTML =buildStopWatches();
 
-
+// code under this comment is to be able to input the text in add and remove player with the enter key.
 
 
 // code under this comment is to be able to input the text in add and remove player with the enter key.

@@ -1,13 +1,16 @@
+/*----------font*/
+
+
+
 /*----------Colours*/
 .menu-button-color{
-    background-color: #ff9900;
+    background-color: #266300;
 }
 .content-area-color{
-    background-color: black;
+    background-color: #9DEB74;
 }
 
-/*----------header*/
-
+/*----------nav-bar*/
 .list-inline-item:not(:last-child) {
     margin-right: 0;}
 
@@ -55,11 +58,12 @@ margin-bottom: 0;}
 /*----------main area*/
 
 .content-area{
-    height: 600px;
+    min-height: 800px;
+    height: 100%;
     margin-top: 0;
 }
 .main-explanation{
-    color: white;
+    color: black;
     padding: 10px 10px;
 }
 
@@ -75,8 +79,9 @@ margin-bottom: 0;}
     font-weight: bold;
 }
 #nameAdd{
-    margin: 0px 5px 5px 10px;
+    margin: 0 5px 5px 10px;
     width: 50%;
+    border: 2px black solid ;
 }
 
 #rem-Btn{
@@ -86,31 +91,26 @@ margin-bottom: 0;}
     font-weight: bold;
 }
 #nameRem{
-    margin: 0px 5px 0px 10px;
+    margin: 0 5px 0 10px;
     width: 50%;
+    border: 2px black solid ;
 }
 /*----------table homepage*/
 #table{
-    padding: 10px 10px 0px 10px ;
+    padding: 10px 10px 0 10px ;
 
 }
 
 table, tr, td, th {
-    border: 1px solid white;
+    border: 1px solid black;
     text-align: center;
-    color: white;
+    color: black;
     width: 100%;
 }
 
 td, th {
     padding: 5px 5px;
 }
-
-th {
-    background-color: #ff9900;
-    color: black;
-}
-
 /*----------table Timer page*/
 .t-table{
 border: none;
@@ -119,12 +119,12 @@ border: none;
 }
 .t-table tr, td, th{
     border: none;
-    background-color: black;
-    color: white;
+    background-color: #9DEB74;
+    color: black;
     height: 45px;
 }
 .t.table td{
-    padding: 30px 5px 30px 0px;
+    padding: 30px 5px 30px 0;
 }
 
 /*----------Timer page*/
@@ -152,7 +152,7 @@ border: none;
     width: 0;
 }
 .toggle-control input:checked ~ .control {
-    background-color: #ff9900;
+    background-color: #266300;
 }
 .toggle-control input:checked ~ .control:after {
     left: 40px;
