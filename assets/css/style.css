@@ -89,3 +89,51 @@ table, tr, td, th {
 td, th {
     padding: 5px;
 }
+/*----------toggle buttons*/
+.toggle-control {
+    display: block;
+    position: relative;
+    padding-left: 100px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding-top: 25px;
+}
+.toggle-control input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.toggle-control input:checked ~ .control {
+    background-color: #ff9900;
+}
+.toggle-control input:checked ~ .control:after {
+    left: 70px;
+}
+.toggle-control .control {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 35px;
+    width: 100px;
+    border-radius: 25px;
+    background-color: darkgray;
+    transition: background-color 0.3s ease-in;
+}
+.toggle-control .control:after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
+    background: white;
+    transition: left 0.3s ease-in;
+}

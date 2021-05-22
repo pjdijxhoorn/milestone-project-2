@@ -74,7 +74,10 @@ function buildStopWatches(){
     <tr>
       <td>${player}</td>
       <td class="bTimer"></td>
-      <td class="switch"></td>
+      <td class="switch"> <label class="toggle-control">
+  <input type="checkbox" checked="checked">
+  <span class="control"></span>
+</label></td>
       <td class="fTimer"></td>
     </tr>
   `;
