@@ -101,7 +101,7 @@ margin-bottom: 0;}
 }
 /*----------table homepage*/
 #table{
-    padding: 10px 10px 0 10px ;
+    padding: 10px 10px 10px 10px ;
 
 }
 
@@ -117,12 +117,13 @@ td, th {
 }
 /*----------table Timer page*/
 .t-table{
-border: none;
+border: solid 1px black;
     table-layout: fixed;
     width: 100%;
 }
 .t-table tr, td, th{
-    border: none;
+    border: solid 1px black;
+    table-layout: fixed;
     background-color: #9DEB74;
     color: black;
     height: 45px;

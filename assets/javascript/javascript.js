@@ -1,6 +1,4 @@
-let players= ["Tim", "Paul", "Richard"];
-console.log(players)
-
+let players= ["Tim", "Harry", "Tom", "Paul", "Hendrik", "Simon", "Koen", "Jorrit", "Fleur", "Nicola",];
 
 // the code under this comment is to add or remove players via button from the players array.
 function addPlayer() {
@@ -57,6 +55,7 @@ function buildTable(){
 
 function buildStopWatches(){
     let html = `
+<div class="d-block d-sm-block d-md-none">
   <table class="t-table">
     <thead>
       <tr>
@@ -73,14 +72,14 @@ function buildStopWatches(){
         let rowHtml = `
     <tr>
       <td>${player}</td>
-      <td class="bTimer">  00:00  </td>
-      <td class="switch"> 
+      <td id="b${player}">  00:00:00  </td>
+      <td> 
             <label class="toggle-control">
-                <input type="checkbox" checked="checked">
+                <input class="switch"  type="checkbox" checked="checked">
                 <span class="control"></span>
             </label>
       </td>
-      <td class="fTimer">  00:00  </td>
+      <td id="f${player}">  00:00:00  </td>
     </tr>
   `;
         html += rowHtml;
@@ -88,12 +87,77 @@ function buildStopWatches(){
     html += `
   </tbody>
 </table>
+</div>
 `;
     return html;
 }
 document.getElementById("stopwatch").innerHTML =buildStopWatches();
 
-// code under this comment is to be able to input the text in add and remove player with the enter key.
+// Function to set time to HH/MM/SS
+function timeToString(time) {
+    let diffInHrs = time / 3600000;
+    let hh = Math.floor(diffInHrs);
+
+    let diffInMin = (diffInHrs - hh) * 60;
+    let mm = Math.floor(diffInMin);
+
+    let diffInSec = (diffInMin - mm) * 60;
+    let ss = Math.floor(diffInSec);
+
+    let diffInMs = (diffInSec - ss) * 100;
+    let ms = Math.floor(diffInMs);
+
+    let formattedMM = mm.toString().padStart(2, "0");
+    let formattedSS = ss.toString().padStart(2, "0");
+    let formattedMS = ms.toString().padStart(2, "0");
+
+    return `${formattedMM}:${formattedSS}:${formattedMS}`;
+}
+
+// Declare variables to use in our functions below
+
+let startTime;
+let elapsedTime = 0;
+let timerInterval;
+
+// Create function to modify innerHTML
+
+function print(txt) {
+    document.getElementById("mainTimer").innerHTML = txt;
+}
+
+// Create "start", "pause" and "reset" functions
+
+function start() {
+    startTime = Date.now() - elapsedTime;
+    timerInterval = setInterval(function printTime() {
+        elapsedTime = Date.now() - startTime;
+        print(timeToString(elapsedTime));
+    }, 10);
+}
+
+function pause() {
+    clearInterval(timerInterval);
+}
+
+function reset() {
+    clearInterval(timerInterval);
+    print("00:00:00");
+    elapsedTime = 0;
+}
+// Create event listeners
+
+let playButton = document.getElementById("start");
+let pauseButton = document.getElementById("stop");
+let resetButton = document.getElementById("reset");
+
+playButton.addEventListener("click", start);
+pauseButton.addEventListener("click", pause);
+resetButton.addEventListener("click", reset);
+
+
+
+
 
 
 // code under this comment is to be able to input the text in add and remove player with the enter key.
