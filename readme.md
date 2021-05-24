@@ -1,9 +1,14 @@
-<h1 align="center">Coach's Timer</h1>
+<h1 align="center">Coach Helper</h1>
 
 [View the live project here.](#)
 
-This is A website to help Fieldhockey coaches with their coaching. This website is designed to work on phone tablet and computer.
-Making it A accessible tool for all potential Fieldhockey coaches.
+This is A website to help Fieldhockey coaches solve a real life problem with their coaching. 
+I am a field hockey coach, and a problem that I kept running in to as well as most of my colleagues is the 
+subbing(switching) of players and how to keep this as fair as possible. This website is designed to solve that problem 
+by listing all the players and giving them stopwatches for both time played and  time on the bench.
+accessibility is important because as coach you don't want to drag to much equipment around there for this website is 
+designed to be able to work well on phone, tablet and computer. 
+
 
  image of site on different devices.
 
@@ -32,11 +37,23 @@ Making it A accessible tool for all potential Fieldhockey coaches.
         The usages of only these 2 variations of green are to not distract the user of the functions of this website. 
         Green was used as main color for this is the color of most of the fields.
 
-        <h2 align="center"><img src=assets/validation/colors.JPG></h2>
+        <h2 align="center"><img src="assets/validation/Colors.png"></h2>
         
         For text the colours black and white were used. White was used for all the menubar buttons. 
         Black was used for all the content text.  
         To ensure that the site is usable for colorblind people the colors were tested with
         https://contrastchecker.com/.
-        
-              
+
+        The color test - [View](assets/validation/my-wcag-color-samples.pdf)
+
+-    #### Typography
+        The Font-family's used on the website are 'Aldrich', with as back-up sans-serif and 'Roboto Slab', with  back-up serif.
+        Aldrich is chosen for the menu-bar for its block/ bold typeface this gives it a Sporty look.
+        Roboto Slab was chosen for its easily readability and modern style.
+     
+-    #### Imagery
+    
+
+-   ### Wireframes
+
+    -  Wireframe for Coach helper - [View](assets/wireframes/wireframe pdf.pdf)
