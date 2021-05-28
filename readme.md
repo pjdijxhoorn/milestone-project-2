@@ -12,7 +12,7 @@ designed to be able to work well on phone, tablet and computer.
 
  image of site on different devices.
 
--   ### User stories
+-   ## User stories
 
     -   #### First Time Visitor Goals
 
@@ -31,8 +31,8 @@ designed to be able to work well on phone, tablet and computer.
         2. As a Frequent User, I want to store my team.
         3. As a Frequent User, I want to see additional functionality
 
--   ### Design
-    -   #### Colour Scheme
+-   ## Design
+    -   ### Colour Scheme
         Within this website There are only 2 colors used. these are both variations of green. 
         The usages of only these 2 variations of green are to not distract the user of the functions of this website. 
         Green was used as main color for this is the color of most of the fields.
@@ -46,14 +46,55 @@ designed to be able to work well on phone, tablet and computer.
 
         The color test - [View](assets/validation/my-wcag-color-samples.pdf)
 
--    #### Typography
-        The Font-family's used on the website are 'Aldrich', with as back-up sans-serif and 'Roboto Slab', with  back-up serif.
+    -   #### Typography
+        The Font-family's used on the website are 'Aldrich', with as back-up sans-serif and 'Roboto Slab', 
+        with  back-up serif.
         Aldrich is chosen for the menu-bar for its block/ bold typeface this gives it a Sporty look.
         Roboto Slab was chosen for its easily readability and modern style.
      
--    #### Imagery
+-    ### Imagery
     
 
 -   ### Wireframes
 
     -  Wireframe for Coach helper - [View](assets/wireframes/wireframe pdf.pdf)
+-  ## Features
+    - ###general
+
+        -   The navigation bar has big buttons, so it is easy to navigate even on mobile devices.
+        -   The buttons on the site are interactive for computer useres to give the users visual conformation. 
+             when they mouse over.
+
+    - ###Home
+        -   The .
+
+    - ###Timer
+        -   The s
+
+    - ###Results
+        -   On .
+        -   The 
+    
+
+
+
+- ## Technologies Used
+
+    - ### Languages Used
+
+        -   [HTML5](https://en.wikipedia.org/wiki/HTML5)
+        -   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+        -   [Javascript](https://en.wikipedia.org/wiki/JavaScript) 
+        
+    - ### Frameworks, Libraries & Programs Used
+        1. [Bootstrap 5.0.x:](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+            - Bootstrap was used to create the rows and columns and to make the website more responsive.
+        1. [Hover.css:](https://ianlunn.github.io/Hover/)
+            - Hover.css was used for all the menu buttons, the project photo's and the social links.
+        1. [Google Fonts:](https://fonts.google.com/)
+            - Google fonts was used to get the 'Aldrich' & 'Roboto Slab' fonts into the style.css file. 
+        1. [Font Awesome:](https://fontawesome.com/)
+            - Font Awesome was used for all the menu-bar icons and all the social links of this website.
+        1. [GitHub:](https://github.com/)
+            - GitHub was used to store all the code, and the code was pushed from Webstorm.
+        
