@@ -1,23 +1,22 @@
-let players= ["Tim", "Harry", "Tom", "Paul", "Hendrik", "Simon", "Koen", "Jorrit", "Fleur", "Nicola",];
+let players = ["Tim", "Harry"];
 
 // the code under this comment is to add or remove players via button from the players array.
-function addPlayer() {
+function addPlayer(){
     let add = document.getElementById("nameAdd");
-    if (add.value === ""){ document.getElementById("error").innerHTML = `You didn't fill in a Name`}
+    if (add.value === ""){ document.getElementById("error").innerHTML = `You didn't fill in a Name`;}
     else {
         players.push(add.value);
         document.getElementById("table").innerHTML = buildTable();
-        document.getElementById("error").innerHTML = ``
+        document.getElementById("error").innerHTML = ``;
     }}
 
 function RemovePlayer(){
-    let Remove =document.getElementById("nameRem")
+    let Remove =document.getElementById("nameRem");
     if( players.includes(Remove.value)){
-   let number = players.indexOf(Remove.value)
-    players.splice(number, 1)
-
+   let number = players.indexOf(Remove.value);
+    players.splice(number, 1);
         document.getElementById("table").innerHTML = buildTable();
-        document.getElementById("error").innerHTML=``
+        document.getElementById("error").innerHTML=``;
     }else{
         document.getElementById("error").innerHTML=`This person is not on the list!`;
     }}
@@ -61,7 +60,7 @@ function buildStopWatches(){
       <tr>
         <th>Players:</th>
         <th>Time on bench </th>
-        <th> switch</th>
+        <th> Switch</th>
         <th>Time in field </th>
       </tr>
     </thead>
@@ -162,13 +161,13 @@ resetButton.addEventListener("click", reset);
 
 // code under this comment is to be able to input the text in add and remove player with the enter key.
 
-document.getElementById("nameAdd").addEventListener("keydown",function (event){
-    if(event.key ==="Enter"){
-        addPlayer();
-    }
-})
-document.getElementById("nameRem").addEventListener("keydown",function (event){
-    if(event.key ==="Enter"){
-        RemovePlayer();
-    }
-})
+//document.getElementById("nameAdd").addEventListener("keydown",function (event){
+   // if(event.key === "Enter"){
+       // addPlayer();
+   // }
+//});
+//document.getElementById("nameRem").addEventListener("keydown",function (event){
+   // if(event.key === "Enter"){
+     //   RemovePlayer();
+   // }
+//});
