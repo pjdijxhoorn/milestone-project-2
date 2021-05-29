@@ -1,5 +1,7 @@
 let players = ["Tim", "Harry","paul","hendrik","charles","rick","benjamin","Tom","Tjonge",];
 
+// the code under this comment is to hide/show the home, timer and results content.
+homeButton();
 function homeButton(){
     $( ".content-area-timer" ).hide();
     $( ".content-area-results" ).hide();
@@ -27,10 +29,7 @@ function addPlayer(){
         players.push(add.value);
         document.getElementById("table").innerHTML = buildTable();
         document.getElementById("error").innerHTML = ``;
-
-        createDivs();
     }}
-
 function RemovePlayer(){
     let Remove =document.getElementById("nameRem");
     if( players.includes(Remove.value)){
@@ -110,13 +109,13 @@ function buildStopWatches(){
     return html;
 }
 
-// to create dragable stopwatches.
+// to create dragable blocks.
 
 function createDivs(){
     for (let player in players){
         let newElement =document.createElement('div');
         newElement.className="item d-none d-sm-block d-md-block;"
-        newElement.innerHTML=`<br>00:00<br>00:00`;
+        newElement.innerHTML=`#player<br>00:00<br>00:00`;
         document.getElementById("container").appendChild(newElement);
     }
 }
@@ -198,8 +197,7 @@ function setTranslate(xPos, yPos, el) {
 }
 
 
-
-
+// code under this comment is to make the stopwatch.
 
 
 // code under this comment is to be able to input the text in add and remove player with the enter key.
