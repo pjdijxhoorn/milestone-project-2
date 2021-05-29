@@ -1,13 +1,34 @@
-let players = ["Tim", "Harry"];
+let players = ["Tim", "Harry","paul","hendrik","charles","rick","benjamin","Tom","Tjonge",];
+
+function homeButton(){
+    $( ".content-area-timer" ).hide();
+    $( ".content-area-results" ).hide();
+    $( ".content-area-home" ).show();
+}
+function timerButton(){
+    $( ".content-area-timer" ).show();
+    $( ".content-area-results" ).hide();
+    $( ".content-area-home" ).hide();
+    document.getElementById("stopwatch").innerHTML = buildStopWatches();
+    $( ".item" ).remove();
+    createDivs();
+}
+function resultsButton(){
+    $( ".content-area-timer" ).hide();
+    $( ".content-area-results" ).show();
+    $( ".content-area-home" ).hide();
+}
 
 // the code under this comment is to add or remove players via button from the players array.
 function addPlayer(){
     let add = document.getElementById("nameAdd");
-    if (add.value === ""){ document.getElementById("error").innerHTML = `You didn't fill in a Name`;}
+    if (add.value === ""){ document.getElementById("error").innerHTML = `You didn't fill in a Name!`;}
     else {
         players.push(add.value);
         document.getElementById("table").innerHTML = buildTable();
         document.getElementById("error").innerHTML = ``;
+
+        createDivs();
     }}
 
 function RemovePlayer(){
@@ -22,6 +43,7 @@ function RemovePlayer(){
     }}
 
 // code under this comment is to build a players list table from the player array.
+
 function buildTable(){
     let html = `
   <table>
@@ -47,8 +69,6 @@ function buildTable(){
 `;
     return html;
 }
-// code under this comment is to store the array data locally
-
 
 // code under this comment is to build table for every player
 
@@ -66,7 +86,6 @@ function buildStopWatches(){
     </thead>
     <tbody>
 `;
-
     for (let player of players) {
         let rowHtml = `
     <tr>
@@ -90,69 +109,93 @@ function buildStopWatches(){
 `;
     return html;
 }
-document.getElementById("stopwatch").innerHTML =buildStopWatches();
 
-// Function to set time to HH/MM/SS
-function timeToString(time) {
-    let diffInHrs = time / 3600000;
-    let hh = Math.floor(diffInHrs);
+// to create dragable stopwatches.
 
-    let diffInMin = (diffInHrs - hh) * 60;
-    let mm = Math.floor(diffInMin);
-
-    let diffInSec = (diffInMin - mm) * 60;
-    let ss = Math.floor(diffInSec);
-
-    let diffInMs = (diffInSec - ss) * 100;
-    let ms = Math.floor(diffInMs);
-
-    let formattedMM = mm.toString().padStart(2, "0");
-    let formattedSS = ss.toString().padStart(2, "0");
-    let formattedMS = ms.toString().padStart(2, "0");
-
-    return `${formattedMM}:${formattedSS}:${formattedMS}`;
+function createDivs(){
+    for (let player in players){
+        let newElement =document.createElement('div');
+        newElement.className="item d-none d-sm-block d-md-block;"
+        newElement.innerHTML=`<br>00:00<br>00:00`;
+        document.getElementById("container").appendChild(newElement);
+    }
 }
 
-// Declare variables to use in our functions below
+// code below is to make the created divs draggable.
 
-let startTime;
-let elapsedTime = 0;
-let timerInterval;
+let container = document.querySelector("#container");
+let activeItem = null;
 
-// Create function to modify innerHTML
+let active = false;
 
-function print(txt) {
-    document.getElementById("mainTimer").innerHTML = txt;
+container.addEventListener("touchstart", dragStart, false);
+container.addEventListener("touchend", dragEnd, false);
+container.addEventListener("touchmove", drag, false);
+
+container.addEventListener("mousedown", dragStart, false);
+container.addEventListener("mouseup", dragEnd, false);
+container.addEventListener("mousemove", drag, false);
+
+function dragStart(e) {
+
+    if (e.target !== e.currentTarget) {
+        active = true;
+
+        activeItem = e.target;
+
+        if (activeItem !== null) {
+            if (!activeItem.xOffset) {
+                activeItem.xOffset = 0;
+            }
+
+            if (!activeItem.yOffset) {
+                activeItem.yOffset = 0;
+            }
+
+            if (e.type === "touchstart") {
+                activeItem.initialX = e.touches[0].clientX - activeItem.xOffset;
+                activeItem.initialY = e.touches[0].clientY - activeItem.yOffset;
+            } else {
+                console.log("doing something!");
+                activeItem.initialX = e.clientX - activeItem.xOffset;
+                activeItem.initialY = e.clientY - activeItem.yOffset;
+            }
+        }
+    }
 }
 
-// Create "start", "pause" and "reset" functions
+function dragEnd(e) {
+    if (activeItem !== null) {
+        activeItem.initialX = activeItem.currentX;
+        activeItem.initialY = activeItem.currentY;
+    }
 
-function start() {
-    startTime = Date.now() - elapsedTime;
-    timerInterval = setInterval(function printTime() {
-        elapsedTime = Date.now() - startTime;
-        print(timeToString(elapsedTime));
-    }, 10);
+    active = false;
+    activeItem = null;
 }
 
-function pause() {
-    clearInterval(timerInterval);
+function drag(e) {
+    if (active) {
+        if (e.type === "touchmove") {
+            e.preventDefault();
+
+            activeItem.currentX = e.touches[0].clientX - activeItem.initialX;
+            activeItem.currentY = e.touches[0].clientY - activeItem.initialY;
+        } else {
+            activeItem.currentX = e.clientX - activeItem.initialX;
+            activeItem.currentY = e.clientY - activeItem.initialY;
+        }
+
+        activeItem.xOffset = activeItem.currentX;
+        activeItem.yOffset = activeItem.currentY;
+
+        setTranslate(activeItem.currentX, activeItem.currentY, activeItem);
+    }
 }
 
-function reset() {
-    clearInterval(timerInterval);
-    print("00:00:00");
-    elapsedTime = 0;
+function setTranslate(xPos, yPos, el) {
+    el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
 }
-// Create event listeners
-
-let playButton = document.getElementById("start");
-let pauseButton = document.getElementById("stop");
-let resetButton = document.getElementById("reset");
-
-playButton.addEventListener("click", start);
-pauseButton.addEventListener("click", pause);
-resetButton.addEventListener("click", reset);
 
 
 

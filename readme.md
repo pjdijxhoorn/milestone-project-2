@@ -97,4 +97,14 @@ designed to be able to work well on phone, tablet and computer.
             - Font Awesome was used for all the menu-bar icons and all the social links of this website.
         1. [GitHub:](https://github.com/)
             - GitHub was used to store all the code, and the code was pushed from Webstorm.
-        
+
+
+
+
+
+
+## Credits
+    - kirupa  draggable blocks
+        https://www.kirupa.com/html5/drag.htm
+
+### Code

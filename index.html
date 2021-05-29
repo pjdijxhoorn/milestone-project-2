@@ -8,6 +8,7 @@
     <meta name="author" content="Paul Dijxhoorn">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/bd7115edaf.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
@@ -16,23 +17,23 @@
 </head>
 <body>
 <!--nav bar-->
-<header>
+<header class="sticky-top">
   <nav>
       <ul id="nav" class="list-inline menu-container sticky-top">
-          <li class="col-4 list-inline-item menu-button menu-button-color">
-              <a class="hvr-fade" href="index.html"><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></a>
+          <li class="col-4 list-inline-item menu-button menu-button-color home-button" onclick="homeButton()">
+              <a class="hvr-fade" href="#"><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></a>
           </li>
-          <li class="col-4 list-inline-item menu-button menu-button-color">
-              <a class="hvr-fade" href="timer.html"><i class="fas fa-stopwatch-20" aria-hidden="true"></i><span>Timer</span></a>
+          <li class="col-4 list-inline-item menu-button menu-button-color timer-button" onclick="timerButton()">
+              <a class="hvr-fade" href="#"><i class="fas fa-stopwatch-20" aria-hidden="true"></i><span>Timer</span></a>
           </li>
-          <li class="col-4 list-inline-item menu-button menu-button-color">
-              <a class="hvr-fade" href="results.html"><i class="fas fa-poll" aria-hidden="true"></i><span>Results</span></a>
+          <li class="col-4 list-inline-item menu-button menu-button-color results-button" onclick="resultsButton()">
+              <a class="hvr-fade" href="#"><i class="fas fa-poll" aria-hidden="true"></i><span>Results</span></a>
           </li>
       </ul>
   </nav>
 </header>
-<!--content area-->
-  <div class="col-12 content-area content-area-color">
+<!--content area Home-->
+  <div class="col-12 content-area-home content-area-color">
       <p class="main-explanation">
           Welcome to this site. This site is meant for coaches and managers of fieldhockey teams.
           However it may be used for other sports as well.
@@ -52,8 +53,31 @@
       </div>
       <div id="table">
       </div>
-
   </div>
+<!--content area Timer-->
+<div id="container" class="col-12 content-area-timer content-area-timer-color">
+    <div id="stopwatch">
+    </div>
+    <div class="button-area">
+        <button id="start" class="b-button-area">
+            Start <i class="fas fa-play"></i>
+        </button>
+        <button id="stop" class="b-button-area">
+            Stop <i class="fas fa-stop"></i>
+        </button>
+        <span id="mainTimer" class="b-button-area">00:00:00
+    </span>
+        <button id="reset" class="b-button-area">
+            Reset <i class="fas fa-undo"></i>
+        </button>
+    </div>
+</div>
+
+<!--content area Timer-->
+<div class="content-area-results result-container-color">
+
+</div>
+
 
 <script src="assets/javascript/javascript.js"></script>
 </body>

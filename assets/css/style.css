@@ -9,7 +9,12 @@ body{font-family:'Roboto Slab', serif; }
 .content-area-color{
     background-color: #9DEB74;
 }
-
+.result-container-color{
+    background-color: #9DEB74;
+}
+.content-area-timer-color{
+    background-color: #9DEB74;
+}
 /*----------nav-bar*/
 header{
     font-family:'Aldrich', sans-serif;
@@ -62,11 +67,11 @@ margin-bottom: 0;}
     background-color: rgba(0,0,0, 0.2) ;
     height: 70px;}
 
-/*----------main area*/
+/*----------content area Home*/
 
-.content-area{
+.content-area-home{
     min-height: 800px;
-    height: 100%;
+    height: 800px;
     margin-top: 0;
     font-family: 'Roboto Slab', serif;
 }
@@ -79,6 +84,8 @@ margin-bottom: 0;}
     color: red;
     text-align: center;
     text-transform: uppercase;
+    font-weight: 500 ;
+    font-size: 25px;
 }
 #add-Btn {
     background-color: green;
@@ -138,13 +145,13 @@ td, th {
 
 /*----------Timer page*/
 
-#container {
+#content-area-timer {
     width: 100%;
-    height: 100%;
+    height: 600px;
     font-family: 'Roboto Slab', serif;
     overflow: hidden;
     touch-action: none;
-    min-height: 800px;
+    min-height: 600px;
 }
 
 /*----------toggle buttons*/
@@ -200,7 +207,23 @@ td, th {
 }
 .b-button-area{
     width: 25%;
+    background-color:#ffffff;
+    border-radius:6px;
+    border:1px solid #dcdcdc;
+    cursor:pointer;
+    color:#666666;
+    font-weight:bold;
+    text-align: center;
 }
+.b-button-area:hover{
+    background-color: antiquewhite;
+    border: 1px solid black;
+}
+.b-button-area:active{
+    position: relative;
+    top: 1px;
+}
+
 
 .item {
     border-radius: 7%;
@@ -220,4 +243,13 @@ td, th {
 }
 .item:active:hover {
     cursor: grabbing;
+}
+.img{
+
+}
+
+.content-area-results{
+    width: 100%;
+    min-height: 800px;
+    height: 100%;
 }
