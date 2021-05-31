@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <title>Coach Helper</title>
 </head>
-<body>
+<body class="body">
 <!--nav bar-->
 <header class="sticky-top">
   <nav>
@@ -55,24 +55,27 @@
       </div>
   </div>
 <!--content area Timer-->
+<div class="col-12  img-block"><img id="hockeyField" class="d-none d-md-block" src="assets/images/hockeyfield.PNG" alt="hockeyfield"></div>
+
 <div id="container" class="col-12 content-area-timer content-area-timer-color">
-    <div id="stopwatch">
-    </div>
-    <div class="button-area fixed-bottom">
-        <button id="start" class="b-button-area">
-            Start <i class="fas fa-play"></i>
-        </button>
-        <button id="stop" class="b-button-area">
-            Stop <i class="fas fa-stop"></i>
-        </button>
-        <span id="mainTimer" class="b-button-area">00:00:00
-    </span>
-        <button id="reset" class="b-button-area">
-            Reset <i class="fas fa-undo"></i>
-        </button>
-    </div>
+
 </div>
 
+<div id="stopwatch">
+</div>
+<div class="button-area fixed-bottom">
+    <button id="start" class="b-button-area">
+        Start <i class="fas fa-play"></i>
+    </button>
+    <button id="stop" class="b-button-area">
+        Stop <i class="fas fa-stop"></i>
+    </button>
+    <span id="mainTimer" class="b-button-area">00:00:00
+    </span>
+    <button id="reset" class="b-button-area">
+        Reset <i class="fas fa-undo"></i>
+    </button>
+</div>
 <!--content area Timer-->
 <div class="content-area-results result-container-color">
 

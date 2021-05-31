@@ -6,11 +6,18 @@ function homeButton(){
     $( ".content-area-timer" ).hide();
     $( ".content-area-results" ).hide();
     $( ".content-area-home" ).show();
+    $("#stopwatch").hide();
+    $(".button-area").hide();
+    $(".img-block").hide();
 }
 function timerButton(){
     $( ".content-area-timer" ).show();
+    $(".img-block").show();
+    $(".button-area").show();
+    $("#stopwatch").show();
     $( ".content-area-results" ).hide();
     $( ".content-area-home" ).hide();
+
     document.getElementById("stopwatch").innerHTML = buildStopWatches();
     $( ".item" ).remove();
     createDivs();
@@ -19,6 +26,9 @@ function resultsButton(){
     $( ".content-area-timer" ).hide();
     $( ".content-area-results" ).show();
     $( ".content-area-home" ).hide();
+    $("#stopwatch").hide();
+    $(".button-area").hide();
+    $(".img-block").hide();
 }
 
 // the code under this comment is to add or remove players via button from the players array.
@@ -89,10 +99,10 @@ function buildStopWatches(){
         let rowHtml = `
     <tr>
       <td>${player}</td>
-      <td id="b${player}">  00:00:00  </td>
+      <td id="b${player}" >  00:00:00  </td>
       <td> 
             <label class="toggle-control">
-                <input class="switch"  type="checkbox" checked="checked">
+                <input id="t${player}" class="switch" type="checkbox">
                 <span class="control"></span>
             </label>
       </td>
@@ -115,7 +125,7 @@ function createDivs(){
     for (let player in players){
         let newElement =document.createElement('div');
         newElement.className="item d-none d-sm-block d-md-block;"
-        newElement.innerHTML=`#player<br>00:00<br>00:00`;
+        newElement.innerHTML=`${players[player]}<br>00:00<br>00:00`;
         document.getElementById("container").appendChild(newElement);
     }
 }
@@ -155,7 +165,6 @@ function dragStart(e) {
                 activeItem.initialX = e.touches[0].clientX - activeItem.xOffset;
                 activeItem.initialY = e.touches[0].clientY - activeItem.yOffset;
             } else {
-                console.log("doing something!");
                 activeItem.initialX = e.clientX - activeItem.xOffset;
                 activeItem.initialY = e.clientY - activeItem.yOffset;
             }
@@ -198,6 +207,80 @@ function setTranslate(xPos, yPos, el) {
 
 
 // code under this comment is to make the stopwatch.
+
+// Convert time to a format of hours, minutes, seconds, and milliseconds
+
+function timeToString(time) {
+    let diffInHrs = time / 3600000;
+    let hh = Math.floor(diffInHrs);
+
+    let diffInMin = (diffInHrs - hh) * 60;
+    let mm = Math.floor(diffInMin);
+
+    let diffInSec = (diffInMin - mm) * 60;
+    let ss = Math.floor(diffInSec);
+
+    let formattedHH = hh.toString().padStart(2, "0");
+    let formattedMM = mm.toString().padStart(2, "0");
+    let formattedSS = ss.toString().padStart(2, "0");
+
+    return `${formattedHH}:${formattedMM}:${formattedSS}`;
+}
+
+// Declare variables to use in our functions below
+
+let startTime;
+let elapsedTime = 0;
+let timerInterval;
+
+let benchTime =0;
+let fieldtime =0;
+
+
+
+
+// Create "start", "pause" and "reset" functions
+
+function start() {
+    startTime = Date.now() - elapsedTime;
+    timerInterval = setInterval(function printTime() {
+        elapsedTime = Date.now() - startTime;
+        document.getElementById("mainTimer").innerHTML = timeToString(elapsedTime);
+    }, 1000);
+}
+function pause() {
+    clearInterval(timerInterval);
+}
+function reset() {
+    clearInterval(timerInterval);
+    document.getElementById("mainTimer").innerHTML = `00:00:00`;
+    elapsedTime = 0;
+}
+
+
+function field(){
+    if (document.getElementById("tHarry").checked === true ){
+        console.log ("true")
+    }
+}
+
+function bench(){
+    if (document.getElementById("tHarry").checked === false ){
+        console.log ("false")
+
+    }}
+
+
+
+// Create event listeners
+
+let playButton = document.getElementById("start");
+let pauseButton = document.getElementById("stop");
+let resetButton = document.getElementById("reset");
+
+playButton.addEventListener("click", start);
+pauseButton.addEventListener("click", pause);
+resetButton.addEventListener("click", reset);
 
 
 // code under this comment is to be able to input the text in add and remove player with the enter key.

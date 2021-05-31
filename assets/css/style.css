@@ -15,6 +15,9 @@ body{font-family:'Roboto Slab', serif; }
 .content-area-timer-color{
     background-color: #9DEB74;
 }
+.body{
+    background-color: #9DEB74;
+}
 /*----------nav-bar*/
 header{
     font-family:'Aldrich', sans-serif;
@@ -153,6 +156,8 @@ td, th {
     touch-action: none;
     min-height: 600px;
 }
+#container{
+}
 
 /*----------toggle buttons*/
 .toggle-control {
@@ -230,8 +235,8 @@ td, th {
     touch-action: none;
     user-select: none;
     position: relative;
-    height:80px;
-    width: 180px;
+    height:70px;
+    width: 140px;
     text-align: center;
     background-color: rgba(240,248,255, 0.4);
     color: black;
@@ -244,12 +249,17 @@ td, th {
 .item:active:hover {
     cursor: grabbing;
 }
-.img{
-
-}
 
 .content-area-results{
     width: 100%;
     min-height: 800px;
     height: 100%;
+}
+
+#hockeyField{
+
+    max-height: 80%;
+    max-width: 80%;
+
+    float: right;
 }
