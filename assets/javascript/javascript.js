@@ -233,8 +233,13 @@ let startTime;
 let elapsedTime = 0;
 let timerInterval;
 
+let startTime2;
+let fieldTime =0;
+let timerInterval2;
+
+let startTime3;
 let benchTime =0;
-let fieldtime =0;
+let timerInterval3;
 
 
 
@@ -242,6 +247,7 @@ let fieldtime =0;
 // Create "start", "pause" and "reset" functions
 
 function start() {
+    test();
     startTime = Date.now() - elapsedTime;
     timerInterval = setInterval(function printTime() {
         elapsedTime = Date.now() - startTime;
@@ -257,18 +263,32 @@ function reset() {
     elapsedTime = 0;
 }
 
-
-function field(){
-    if (document.getElementById("tHarry").checked === true ){
-        console.log ("true")
+function test(){setInterval(test, 1000)
+    if (document.getElementById("tHarry").checked === false ){
+        field();
+    }else if (document.getElementById("tHarry").checked === true ){
+        bench();
     }
 }
 
-function bench(){
-    if (document.getElementById("tHarry").checked === false ){
-        console.log ("false")
 
-    }}
+function field(){
+    startTime2 = Date.now() - fieldTime;
+    timerInterval2 = setInterval(function printTime() {
+        fieldTime = Date.now() - startTime2;
+        document.getElementById("fHarry").innerHTML = timeToString(fieldTime);
+        }, 1000);
+
+}
+
+function bench(){
+    startTime3 = Date.now() - benchTime;
+    timerInterval3 = setInterval(function printTime() {
+        benchTime = Date.now() - startTime3;
+        document.getElementById("bHarry").innerHTML = timeToString(benchTime);
+        }, 1000);
+
+}
 
 
 
