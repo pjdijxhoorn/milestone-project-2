@@ -6,28 +6,29 @@ function homeButton(){
     $( ".content-area-timer" ).hide();
     $( ".content-area-results" ).hide();
     $( ".content-area-home" ).show();
-    $("#stopwatch").hide();
-    $(".button-area").hide();
+    $("#watchgroup").hide();
+    $("#btngroup").hide();
     $(".img-block").hide();
 }
 function timerButton(){
     $( ".content-area-timer" ).show();
     $(".img-block").show();
-    $(".button-area").show();
-    $("#stopwatch").show();
+    $("#btngroup").show();
+    $("#watchgroup").show();
     $( ".content-area-results" ).hide();
     $( ".content-area-home" ).hide();
 
-    document.getElementById("stopwatch").innerHTML = buildStopWatches();
     $( ".item" ).remove();
     createDivs();
+
+
 }
 function resultsButton(){
     $( ".content-area-timer" ).hide();
     $( ".content-area-results" ).show();
     $( ".content-area-home" ).hide();
-    $("#stopwatch").hide();
-    $(".button-area").hide();
+    $("#watchgroup").hide();
+    $("#btngroup").hide();
     $(".img-block").hide();
 }
 
@@ -79,45 +80,113 @@ function buildTable(){
     return html;
 }
 
-// code under this comment is to build table for every player
+// code under this comment is to build div for every player
 
-function buildStopWatches(){
-    let html = `
-<div class="d-block d-sm-block d-md-none">
-  <table class="t-table">
-    <thead>
-      <tr>
-        <th>Players:</th>
-        <th>Time on bench </th>
-        <th> Switch</th>
-        <th>Time in field </th>
-      </tr>
-    </thead>
-    <tbody>
-`;
-    for (let player of players) {
-        let rowHtml = `
-    <tr>
-      <td>${player}</td>
-      <td id="b${player}" >  00:00:00  </td>
-      <td> 
-            <label class="toggle-control">
-                <input id="t${player}" class="switch" type="checkbox">
-                <span class="control"></span>
-            </label>
-      </td>
-      <td id="f${player}">  00:00:00  </td>
-    </tr>
-  `;
-        html += rowHtml;
+var Stopwatch = function(elem, options) {
+    var timer = createTimer(),
+        startButton = createButton("start", start),
+        stopButton = createButton("stop", stop),
+        resetButton = createButton("reset", reset),
+        offset,
+        clock,
+        interval;
+
+    // default options
+    options = options || {};
+    options.delay = options.delay || 1;
+
+    // append elements
+    elem.appendChild(timer);
+    elem.appendChild(startButton);
+    elem.appendChild(stopButton);
+    elem.appendChild(resetButton);
+
+    // initialize
+    reset();
+
+    // private functions
+    function createTimer() {
+        return document.createElement("span");
     }
-    html += `
-  </tbody>
-</table>
-</div>
-`;
-    return html;
+
+    function createButton(action, handler) {
+        var a = document.createElement("a");
+        a.href = "#" + action;
+        a.innerHTML = action;
+        a.addEventListener("click", function(event) {
+            handler();
+            event.preventDefault();
+        });
+        return a;
+    }
+
+    function start() {
+        if (!interval) {
+            offset = Date.now();
+            interval = setInterval(update, options.delay);
+        }
+    }
+
+    function stop() {
+        if (interval) {
+            clearInterval(interval);
+            interval = null;
+        }
+    }
+
+    function reset() {
+        clock = 0;
+        render(0);
+    }
+
+    function update() {
+        clock += delta();
+        render();
+    }
+
+    function render() {
+        var h = Math.floor(clock / (1000 * 60 * 60)) % 24;
+        var m = Math.floor(clock / (1000 * 60)) % 60;
+        var s = Math.floor(clock / 1000) % 60;
+        var ms = Math.floor(clock % 1000);
+
+        if (h < 10) {
+            h = "0" + h;
+        }
+        if (m < 10) {
+            m = "0" + m;
+        }
+        if (s < 10) {
+            s = "0" + s;
+        }
+
+        timer.innerHTML = h + ':' + m + ':' + s + '';
+
+    }
+
+    function delta() {
+        var now = Date.now(),
+            d = now - offset;
+
+        offset = now;
+        return d;
+    }
+
+    this.start = start;
+    this.stop = stop;
+    this.reset = reset;
+};
+
+
+var elems = document.getElementsByClassName("basic");
+for (var i = 0, len = elems.length; i < len; i++) {
+    new Stopwatch(elems[i]);
 }
+
+
+
+
+
 
 // to create dragable blocks.
 
@@ -208,99 +277,6 @@ function setTranslate(xPos, yPos, el) {
 
 // code under this comment is to make the stopwatch.
 
-// Convert time to a format of hours, minutes, seconds, and milliseconds
-
-function timeToString(time) {
-    let diffInHrs = time / 3600000;
-    let hh = Math.floor(diffInHrs);
-
-    let diffInMin = (diffInHrs - hh) * 60;
-    let mm = Math.floor(diffInMin);
-
-    let diffInSec = (diffInMin - mm) * 60;
-    let ss = Math.floor(diffInSec);
-
-    let formattedHH = hh.toString().padStart(2, "0");
-    let formattedMM = mm.toString().padStart(2, "0");
-    let formattedSS = ss.toString().padStart(2, "0");
-
-    return `${formattedHH}:${formattedMM}:${formattedSS}`;
-}
-
-// Declare variables to use in our functions below
-
-let startTime;
-let elapsedTime = 0;
-let timerInterval;
-
-let startTime2;
-let fieldTime =0;
-let timerInterval2;
-
-let startTime3;
-let benchTime =0;
-let timerInterval3;
-
-
-
-
-// Create "start", "pause" and "reset" functions
-
-function start() {
-    test();
-    startTime = Date.now() - elapsedTime;
-    timerInterval = setInterval(function printTime() {
-        elapsedTime = Date.now() - startTime;
-        document.getElementById("mainTimer").innerHTML = timeToString(elapsedTime);
-    }, 1000);
-}
-function pause() {
-    clearInterval(timerInterval);
-}
-function reset() {
-    clearInterval(timerInterval);
-    document.getElementById("mainTimer").innerHTML = `00:00:00`;
-    elapsedTime = 0;
-}
-
-function test(){setInterval(test, 1000)
-    if (document.getElementById("tHarry").checked === false ){
-        field();
-    }else if (document.getElementById("tHarry").checked === true ){
-        bench();
-    }
-}
-
-
-function field(){
-    startTime2 = Date.now() - fieldTime;
-    timerInterval2 = setInterval(function printTime() {
-        fieldTime = Date.now() - startTime2;
-        document.getElementById("fHarry").innerHTML = timeToString(fieldTime);
-        }, 1000);
-
-}
-
-function bench(){
-    startTime3 = Date.now() - benchTime;
-    timerInterval3 = setInterval(function printTime() {
-        benchTime = Date.now() - startTime3;
-        document.getElementById("bHarry").innerHTML = timeToString(benchTime);
-        }, 1000);
-
-}
-
-
-
-// Create event listeners
-
-let playButton = document.getElementById("start");
-let pauseButton = document.getElementById("stop");
-let resetButton = document.getElementById("reset");
-
-playButton.addEventListener("click", start);
-pauseButton.addEventListener("click", pause);
-resetButton.addEventListener("click", reset);
 
 
 // code under this comment is to be able to input the text in add and remove player with the enter key.
