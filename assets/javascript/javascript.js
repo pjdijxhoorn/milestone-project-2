@@ -183,7 +183,21 @@ for (var i = 0, len = elems.length; i < len; i++) {
     new Stopwatch(elems[i]);
 }
 
-
+function startBtn(){
+    let startBtn = document.querySelectorAll("a[href='#start']")
+    for(var i = 0; i < startBtn.length; i++)
+        startBtn[i].click();
+}
+function stopBtn(){
+    let stopBtn = document.querySelectorAll("a[href='#stop']")
+    for(var i = 0; i < stopBtn.length; i++)
+        stopBtn[i].click();
+}
+function resetBtn(){
+    let resetBtn = document.querySelectorAll("a[href='#reset']")
+    for(var i = 0; i < resetBtn.length; i++)
+        resetBtn[i].click();
+}
 
 
 
