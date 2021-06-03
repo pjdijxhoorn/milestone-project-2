@@ -1,60 +1,69 @@
-let players = ["Tim", "Harry","paul","hendrik","charles","rick","benjamin","Tom","Tjonge",];
+let players = ["Timothy", "Harriet", "paulus", "hendrik", "charles", "rick", "benjamin", "Tom",
+    "Tjonge",];
+let trueCheck = false;
 
 // the code under this comment is to hide/show the home, timer and results content.
 homeButton();
-function homeButton(){
-    $( ".content-area-timer" ).hide();
-    $( ".content-area-results" ).hide();
-    $( ".content-area-home" ).show();
-    $("#watchgroup").hide();
+
+function homeButton() {
+    $(".content-area-timer").hide();
+    $(".content-area-results").hide();
+    $(".content-area-home").show();
+    $("#watchGroup").hide();
     $("#btngroup").hide();
     $(".img-block").hide();
 }
-function timerButton(){
-    $( ".content-area-timer" ).show();
+
+function timerButton() {
+    $(".content-area-timer").show();
     $(".img-block").show();
     $("#btngroup").show();
-    $("#watchgroup").show();
-    $( ".content-area-results" ).hide();
-    $( ".content-area-home" ).hide();
+    $("#watchGroup").show();
+    $(".content-area-results").hide();
+    $(".content-area-home").hide();
 
-    $( ".item" ).remove();
+    $(".item").remove();
     createDivs();
 
 
 }
-function resultsButton(){
-    $( ".content-area-timer" ).hide();
-    $( ".content-area-results" ).show();
-    $( ".content-area-home" ).hide();
-    $("#watchgroup").hide();
+
+function resultsButton() {
+    $(".content-area-timer").hide();
+    $(".content-area-results").show();
+    $(".content-area-home").hide();
+    $("#watchGroup").hide();
     $("#btngroup").hide();
     $(".img-block").hide();
 }
 
 // the code under this comment is to add or remove players via button from the players array.
-function addPlayer(){
+function addPlayer() {
     let add = document.getElementById("nameAdd");
-    if (add.value === ""){ document.getElementById("error").innerHTML = `You didn't fill in a Name!`;}
-    else {
+    if (add.value === "") {
+        document.getElementById("error").innerHTML = `You didn't fill in a Name!`;
+    } else {
         players.push(add.value);
         document.getElementById("table").innerHTML = buildTable();
         document.getElementById("error").innerHTML = ``;
-    }}
-function RemovePlayer(){
-    let Remove =document.getElementById("nameRem");
-    if( players.includes(Remove.value)){
-   let number = players.indexOf(Remove.value);
-    players.splice(number, 1);
+    }
+}
+
+function RemovePlayer() {
+    let Remove = document.getElementById("nameRem");
+    if (players.includes(Remove.value)) {
+        let number = players.indexOf(Remove.value);
+        players.splice(number, 1);
         document.getElementById("table").innerHTML = buildTable();
-        document.getElementById("error").innerHTML=``;
-    }else{
-        document.getElementById("error").innerHTML=`This person is not on the list!`;
-    }}
+        document.getElementById("error").innerHTML = ``;
+    } else {
+        document.getElementById("error").innerHTML = `This person is not on the list!`;
+    }
+}
 
 // code under this comment is to build a players list table from the player array.
 
-function buildTable(){
+function buildTable() {
     let html = `
   <table>
     <thead>
@@ -80,9 +89,45 @@ function buildTable(){
     return html;
 }
 
+
+// the code below is for the toggle buttons to switch between timers
+addNames();
+function addNames(){
+    let spans = document.querySelectorAll('div[class="name"]');
+
+    for (i = 0; i < players.length; i++) {
+        spans[i].innerHTML = players[i];
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    let checkbox = document.querySelector('input[type="checkbox"]');
+    let start = document.querySelectorAll("a[href='#start']")
+    let stop = document.querySelectorAll("a[href='#stop']")
+    let reset = document.querySelectorAll("a[href='#reset']")
+    checkbox.addEventListener('change', function () {
+        if (checkbox.checked && trueCheck === true) {
+            // do this
+            console.log('Checked');
+            start[1].click();
+            stop[0].click();
+            reset[0].click();
+
+        }else if(trueCheck === true){
+            // do that
+            console.log('Not checked');
+            start[0].click();
+            stop[1].click();
+        }else{
+            console.log("start is not on")
+        }
+    });
+});
+
+
 // code under this comment is to build div for every player
 
-var Stopwatch = function(elem, options) {
+var Stopwatch = function (elem, options) {
     var timer = createTimer(),
         startButton = createButton("start", start),
         stopButton = createButton("stop", stop),
@@ -113,7 +158,7 @@ var Stopwatch = function(elem, options) {
         var a = document.createElement("a");
         a.href = "#" + action;
         a.innerHTML = action;
-        a.addEventListener("click", function(event) {
+        a.addEventListener("click", function (event) {
             handler();
             event.preventDefault();
         });
@@ -183,32 +228,34 @@ for (var i = 0, len = elems.length; i < len; i++) {
     new Stopwatch(elems[i]);
 }
 
-function startBtn(){
+function startBtn() {
+    trueCheck = true;
     let startBtn = document.querySelectorAll("a[href='#start']")
-    for(var i = 0; i < startBtn.length; i++)
+    for (var i = 0; i < startBtn.length; i++)
         startBtn[i].click();
 }
-function stopBtn(){
+
+function stopBtn() {
+    trueCheck = false;
     let stopBtn = document.querySelectorAll("a[href='#stop']")
-    for(var i = 0; i < stopBtn.length; i++)
+    for (var i = 0; i < stopBtn.length; i++)
         stopBtn[i].click();
 }
-function resetBtn(){
+
+function resetBtn() {
     let resetBtn = document.querySelectorAll("a[href='#reset']")
-    for(var i = 0; i < resetBtn.length; i++)
+    for (var i = 0; i < resetBtn.length; i++)
         resetBtn[i].click();
 }
 
 
-
-
 // to create dragable blocks.
 
-function createDivs(){
-    for (let player in players){
-        let newElement =document.createElement('div');
-        newElement.className="item d-none d-sm-block d-md-block;"
-        newElement.innerHTML=`${players[player]}<br>00:00<br>00:00`;
+function createDivs() {
+    for (let player in players) {
+        let newElement = document.createElement('div');
+        newElement.className = "item d-none d-sm-block d-md-block;"
+        newElement.innerHTML = `${players[player]}<br>00:00<br>00:00`;
         document.getElementById("container").appendChild(newElement);
     }
 }
@@ -292,16 +339,15 @@ function setTranslate(xPos, yPos, el) {
 // code under this comment is to make the stopwatch.
 
 
-
 // code under this comment is to be able to input the text in add and remove player with the enter key.
 
 //document.getElementById("nameAdd").addEventListener("keydown",function (event){
-   // if(event.key === "Enter"){
-       // addPlayer();
-   // }
+// if(event.key === "Enter"){
+// addPlayer();
+// }
 //});
 //document.getElementById("nameRem").addEventListener("keydown",function (event){
-   // if(event.key === "Enter"){
-     //   RemovePlayer();
-   // }
-//});
+// if(event.key === "Enter"){
+//   RemovePlayer();
+// }
+//})
