@@ -1,47 +1,57 @@
 /*----------font*/
 @import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Roboto+Slab&display=swap');
 
-body{font-family:'Roboto Slab', serif; }
+body {
+    font-family: 'Roboto Slab', serif;
+}
+
 /*----------Colours*/
-.menu-button-color{
+.menu-button-color {
     background-color: #266300;
 }
-.content-area-color{
+
+.content-area-color {
     background-color: #9DEB74;
 }
-.result-container-color{
+
+.result-container-color {
     background-color: #9DEB74;
 }
-.content-area-timer-color{
+
+.content-area-timer-color {
     background-color: #9DEB74;
 }
-.body{
+
+.body {
     background-color: #9DEB74;
 }
+
 /*----------nav-bar*/
-header{
-    font-family:'Aldrich', sans-serif;
+header {
+    font-family: 'Aldrich', sans-serif;
 }
+
 .list-inline-item:not(:last-child) {
-    margin-right: 0;}
+    margin-right: 0;
+}
 
-.menu-container{
-font-size: 0;
-margin-bottom: 0;}
+.menu-container {
+    font-size: 0;
+    margin-bottom: 0;
+}
 
-
-#nav li{
+#nav li {
     font-size: 14px;
     padding: 0;
 }
 
-.menu-button{
-  height: 70px;
-  text-align: center;
-  padding: 0;
-
+.menu-button {
+    height: 70px;
+    text-align: center;
+    padding: 0;
 }
-.menu-button a{
+
+.menu-button a {
     color: white;
     text-decoration: none;
     width: 100%;
@@ -49,14 +59,14 @@ margin-bottom: 0;}
     height: 70px;
 }
 
-.menu-button a i{
+.menu-button a i {
     padding-top: 11px;
     display: block;
     color: white;
     font-size: 20px;
 }
 
-.menu-button span{
+.menu-button span {
     display: block;
     width: 100%;
     padding-top: 5px;
@@ -66,19 +76,22 @@ margin-bottom: 0;}
     letter-spacing: 2px;
     font-weight: bold;
 }
-.hvr-fade:active, .hvr-fade:focus, .hvr-fade:hover{
-    background-color: rgba(0,0,0, 0.2) ;
-    height: 70px;}
+
+.hvr-fade:active, .hvr-fade:focus, .hvr-fade:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 70px;
+}
 
 /*----------content area Home*/
 
-.content-area-home{
+.content-area-home {
     min-height: 800px;
     height: 800px;
     margin-top: 0;
     font-family: 'Roboto Slab', serif;
 }
-.main-explanation{
+
+.main-explanation {
     color: black;
     padding: 10px 10px;
 }
@@ -87,35 +100,39 @@ margin-bottom: 0;}
     color: red;
     text-align: center;
     text-transform: uppercase;
-    font-weight: 500 ;
+    font-weight: 500;
     font-size: 25px;
 }
+
 #add-Btn {
     background-color: green;
     width: 40%;
     text-transform: uppercase;
     font-weight: bold;
 }
-#nameAdd{
+
+#nameAdd {
     margin: 0 5px 5px 10px;
     width: 50%;
-    border: 2px black solid ;
+    border: 2px black solid;
 }
 
-#rem-Btn{
+#rem-Btn {
     background-color: red;
     width: 40%;
     text-transform: uppercase;
     font-weight: bold;
 }
-#nameRem{
+
+#nameRem {
     margin: 0 5px 0 10px;
     width: 50%;
-    border: 2px black solid ;
+    border: 2px black solid;
 }
+
 /*----------table homepage*/
-#table{
-    padding: 10px 10px 10px 10px ;
+#table {
+    padding: 10px 10px 10px 10px;
 
 }
 
@@ -141,91 +158,87 @@ td, th {
     touch-action: none;
     min-height: 600px;
 }
-#container{
-}
-/*----------table Timer page*/
-.t-table{
-    border: none;
-    table-layout: fixed;
-    width: 100%;
-}
-.t-table tr, td, th{
-    border: none;
-    table-layout: fixed;
-    background-color: #9DEB74;
-    color: black;
-    height: 45px;
-}
-.t.table td{
-    padding: 30px 5px 30px 0;
+
+/*----------Timer page*/
+/*----------toggle buttons*/
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 34px;
+    margin-top: 5px;
 }
 
-/*----------toggle buttons*/
-.toggle-control {
-    display: block;
-    position: relative;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    padding-top: 25px;
+.switch input {
+    display: none;
 }
-.toggle-control input {
+
+.slider {
     position: absolute;
-    opacity: 0;
     cursor: pointer;
-    height: 0;
-    width: 0;
-}
-.toggle-control input:checked ~ .control {
-    background-color: #266300;
-}
-.toggle-control input:checked ~ .control:after {
-    left: 40px;
-}
-.toggle-control .control {
-    position: absolute;
     top: 0;
     left: 0;
-    height: 30px;
-    padding-bottom: 5px;
-    width: 70px;
-    border-radius: 25px;
-    background-color: darkgray;
-    transition: background-color 0.3s ease-in;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
 }
-.toggle-control .control:after {
-    content: "";
-    position: absolute;
-    left: 5px;
-    top: 3px;
-    width: 24px;
-    height: 24px;
-    border-radius: 25px;
-    background: white;
-    transition: left 0.3s ease-in;
-}
-.button-area{
-    padding: 10px 10px;
 
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
 }
-.b-button-area{
+
+input:checked + .slider {
+    background-color: darkgreen;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(45px);
+    -ms-transform: translateX(45px);
+    transform: translateX(45px);
+}
+
+/*---------- timer buttons*/
+.btngroup{
+    margin-top: 20px;
+}
+
+.button-area {
+    padding: 10px 10px;
+}
+
+.b-button-area {
     width: 25%;
-    background-color:#ffffff;
-    border-radius:6px;
-    border:1px solid #dcdcdc;
-    cursor:pointer;
-    color:#666666;
-    font-weight:bold;
+    background-color: #ffffff;
+    border-radius: 6px;
+    border: 1px solid #dcdcdc;
+    cursor: pointer;
+    color: #666666;
+    font-weight: bold;
     text-align: center;
 }
-.b-button-area:hover{
+
+.b-button-area:hover {
     background-color: antiquewhite;
     border: 1px solid black;
 }
-.b-button-area:active{
+
+.b-button-area:active {
     position: relative;
     top: 1px;
 }
@@ -236,32 +249,34 @@ td, th {
     touch-action: none;
     user-select: none;
     position: relative;
-    height:70px;
+    height: 70px;
     width: 140px;
     text-align: center;
-    background-color: rgba(240,248,255, 0.4);
+    background-color: rgba(240, 248, 255, 0.4);
     color: black;
     border: 1px solid black;
+    line-height: 40px;
+    font-weight: 600;
+    font-size: 20px;
 }
 
 .item:hover {
     cursor: grab;
 }
+
 .item:active:hover {
     cursor: grabbing;
 }
 
-.content-area-results{
+.content-area-results {
     width: 100%;
     min-height: 800px;
     height: 100%;
 }
 
-#hockeyField{
-
+#hockeyField {
     max-height: 80%;
     max-width: 80%;
-
     float: right;
 }
 
@@ -269,9 +284,10 @@ td, th {
 .stopwatch {
     display: inline-block;
     background-color: white;
-    border: 1px solid #eee;
-    padding: 5px;
-    margin: 5px;
+    border: 1px solid black;
+    padding: 5px 5px;
+    margin: 0 5px;
+    width: 75px;
 }
 
 .stopwatch span {
@@ -281,4 +297,31 @@ td, th {
 
 .stopwatch a {
     padding-right: 5px;
+    display: none;
+}
+
+#watchGroup {
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.name {
+    border: 1px solid black;
+    padding: 5px;
+    margin-left: 5px;
+    width: 100px;
+    display: inline-block;
+}
+
+.labelGroup {
+    padding: 0px 5px;
+    margin-bottom: 5px;
+}
+
+.label {
+    border: 1px solid black;
+    padding: 5px;
+    width: 100px;
+    font-weight: 600;
+    background-color: #79A33E;
 }
