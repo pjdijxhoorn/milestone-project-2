@@ -109,249 +109,299 @@ document.addEventListener('DOMContentLoaded', function () {
     let stop = document.querySelectorAll("a[href='#stop']");
     let reset = document.querySelectorAll("a[href='#reset']");
 
-        checkbox[0].addEventListener('change', function check1() {
+    document.getElementById("start").addEventListener("click", startBtn)
 
+    function startBtn() {
+        trueCheck = true;
+        start[32].click();
+        check0();
+        check1();
+        check2();
+        check3();
+        check4();
+        check5();
+        check6();
+        check7();
+        check8();
+        check9();
+        check10();
+        check11();
+        check12();
+        check13();
+        check14();
+        check15();
 
-            if (checkbox[0].checked && trueCheck === true) {
-                start[1].click();
-                stop[0].click();
-                reset[0].click();
+    }
 
-            } else if (trueCheck === true) {
-                start[0].click();
-                stop[1].click();
+    checkbox[0].addEventListener('change', check0);
+    checkbox[1].addEventListener('change', check1);
+    checkbox[2].addEventListener('change', check2);
+    checkbox[3].addEventListener('change', check3);
+    checkbox[4].addEventListener('change', check4);
+    checkbox[5].addEventListener('change', check5);
+    checkbox[6].addEventListener('change', check6);
+    checkbox[7].addEventListener('change', check7);
+    checkbox[8].addEventListener('change', check8);
+    checkbox[9].addEventListener('change', check9);
+    checkbox[10].addEventListener('change', check10);
+    checkbox[11].addEventListener('change', check11);
+    checkbox[12].addEventListener('change', check12);
+    checkbox[13].addEventListener('change', check13);
+    checkbox[14].addEventListener('change', check14);
+    checkbox[15].addEventListener('change', check15);
 
-            } else {
-                console.log("start is not on")
-            }
-        });
-        checkbox[1].addEventListener('change', function () {
+    function check0() {
+        if (checkbox[0].checked && trueCheck === true) {
+            start[1].click();
+            stop[0].click();
+            reset[0].click();
 
-            if (checkbox[1].checked && trueCheck === true) {
-                start[3].click();
-                stop[2].click();
-                reset[2].click();
+        } else if (trueCheck === true) {
+            start[0].click();
+            stop[1].click();
 
-            } else if (trueCheck === true) {
-                start[2].click();
-                stop[3].click();
+        } else {
+            console.log("start is not on")
+        }
+    }
 
-            } else {
-                console.log("start is not on")
-            }
-        });
-        checkbox[2].addEventListener('change', function () {
+    function check1() {
+        if (checkbox[1].checked && trueCheck === true) {
+            start[3].click();
+            stop[2].click();
+            reset[2].click();
 
-            if (checkbox[2].checked && trueCheck === true) {
-                start[5].click();
-                stop[4].click();
-                reset[4].click();
+        } else if (trueCheck === true) {
+            start[2].click();
+            stop[3].click();
 
-            } else if (trueCheck === true) {
-                start[4].click();
-                stop[5].click();
+        } else {
+            console.log("start is not on")
+        }
+    }
 
-            } else {
-                console.log("start is not on")
-            }
-        });
-        checkbox[3].addEventListener('change', function () {
+    function check2() {
+        if (checkbox[2].checked && trueCheck === true) {
+            start[5].click();
+            stop[4].click();
+            reset[4].click();
 
-            if (checkbox[3].checked && trueCheck === true) {
-                start[7].click();
-                stop[6].click();
-                reset[6].click();
+        } else if (trueCheck === true) {
+            start[4].click();
+            stop[5].click();
 
-            } else if (trueCheck === true) {
-                start[6].click();
-                stop[7].click();
+        } else {
+            console.log("start is not on")
+        }
+    }
 
-            } else {
-                console.log("start is not on")
-            }
-        });
-        checkbox[4].addEventListener('change', function () {
+    function check3() {
 
-            if (checkbox[4].checked && trueCheck === true) {
-                start[9].click();
-                stop[8].click();
-                reset[8].click();
+        if (checkbox[3].checked && trueCheck === true) {
+            start[7].click();
+            stop[6].click();
+            reset[6].click();
 
-            } else if (trueCheck === true) {
-                start[8].click();
-                stop[9].click();
+        } else if (trueCheck === true) {
+            start[6].click();
+            stop[7].click();
 
-            } else {
-                console.log("start is not on")
-            }
-        });
-        checkbox[5].addEventListener('change', function () {
+        } else {
+            console.log("start is not on")
+        }
+    }
 
-            if (checkbox[5].checked && trueCheck === true) {
-                start[11].click();
-                stop[10].click();
-                reset[10].click();
+    function check4() {
 
-            } else if (trueCheck === true) {
-                start[10].click();
-                stop[11].click();
+        if (checkbox[4].checked && trueCheck === true) {
+            start[9].click();
+            stop[8].click();
+            reset[8].click();
 
-            } else {
-                console.log("start is not on")
-            }
-        });
-        checkbox[6].addEventListener('change', function () {
+        } else if (trueCheck === true) {
+            start[8].click();
+            stop[9].click();
 
-            if (checkbox[6].checked && trueCheck === true) {
-                start[13].click();
-                stop[12].click();
-                reset[12].click();
+        } else {
+            console.log("start is not on")
+        }
+    }
 
-            } else if (trueCheck === true) {
-                start[12].click();
-                stop[13].click();
+    function check5() {
 
-            } else {
-                console.log("start is not on")
-            }
-        });
-        checkbox[7].addEventListener('change', function () {
+        if (checkbox[5].checked && trueCheck === true) {
+            start[11].click();
+            stop[10].click();
+            reset[10].click();
 
-            if (checkbox[7].checked && trueCheck === true) {
-                start[15].click();
-                stop[14].click();
-                reset[14].click();
+        } else if (trueCheck === true) {
+            start[10].click();
+            stop[11].click();
 
-            } else if (trueCheck === true) {
-                start[14].click();
-                stop[15].click();
+        } else {
+            console.log("start is not on")
+        }
+    }
 
-            } else {
-                console.log("start is not on")
-            }
-        });
-        checkbox[8].addEventListener('change', function () {
+    function check6() {
+        if (checkbox[6].checked && trueCheck === true) {
+            start[13].click();
+            stop[12].click();
+            reset[12].click();
 
-            if (checkbox[8].checked && trueCheck === true) {
-                start[17].click();
-                stop[16].click();
-                reset[16].click();
+        } else if (trueCheck === true) {
+            start[12].click();
+            stop[13].click();
 
-            } else if (trueCheck === true) {
-                start[16].click();
-                stop[17].click();
+        } else {
+            console.log("start is not on")
+        }
+    }
 
-            } else {
-                console.log("start is not on")
-            }
-        });
-        checkbox[9].addEventListener('change', function () {
+    function check7() {
 
-            if (checkbox[9].checked && trueCheck === true) {
-                start[19].click();
-                stop[18].click();
-                reset[18].click();
+        if (checkbox[7].checked && trueCheck === true) {
+            start[15].click();
+            stop[14].click();
+            reset[14].click();
 
-            } else if (trueCheck === true) {
-                start[18].click();
-                stop[19].click();
+        } else if (trueCheck === true) {
+            start[14].click();
+            stop[15].click();
 
-            } else {
-                console.log("start is not on")
-            }
-        });
-        checkbox[10].addEventListener('change', function () {
+        } else {
+            console.log("start is not on")
+        }
+    }
 
-            if (checkbox[10].checked && trueCheck === true) {
-                start[21].click();
-                stop[20].click();
-                reset[20].click();
+    function check8() {
 
-            } else if (trueCheck === true) {
-                start[20].click();
-                stop[21].click();
+        if (checkbox[8].checked && trueCheck === true) {
+            start[17].click();
+            stop[16].click();
+            reset[16].click();
 
-            } else {
-                console.log("start is not on")
-            }
-        });
-        checkbox[11].addEventListener('change', function () {
+        } else if (trueCheck === true) {
+            start[16].click();
+            stop[17].click();
 
-            if (checkbox[11].checked && trueCheck === true) {
-                start[23].click();
-                stop[22].click();
-                reset[22].click();
+        } else {
+            console.log("start is not on")
+        }
+    }
 
-            } else if (trueCheck === true) {
-                start[22].click();
-                stop[23].click();
+    function check9() {
 
-            } else {
-                console.log("start is not on")
-            }
-        });
-        checkbox[12].addEventListener('change', function () {
+        if (checkbox[9].checked && trueCheck === true) {
+            start[19].click();
+            stop[18].click();
+            reset[18].click();
 
-            if (checkbox[12].checked && trueCheck === true) {
-                start[25].click();
-                stop[24].click();
-                reset[24].click();
+        } else if (trueCheck === true) {
+            start[18].click();
+            stop[19].click();
 
-            } else if (trueCheck === true) {
-                start[24].click();
-                stop[25].click();
+        } else {
+            console.log("start is not on")
+        }
+    }
 
-            } else {
-                console.log("start is not on")
-            }
-        });
-        checkbox[13].addEventListener('change', function () {
+    function check10() {
 
-            if (checkbox[13].checked && trueCheck === true) {
-                start[27].click();
-                stop[26].click();
-                reset[26].click();
+        if (checkbox[10].checked && trueCheck === true) {
+            start[21].click();
+            stop[20].click();
+            reset[20].click();
 
-            } else if (trueCheck === true) {
-                start[26].click();
-                stop[27].click();
+        } else if (trueCheck === true) {
+            start[20].click();
+            stop[21].click();
 
-            } else {
-                console.log("start is not on")
-            }
-        });
-        checkbox[14].addEventListener('change', function () {
+        } else {
+            console.log("start is not on")
+        }
+    }
 
-            if (checkbox[14].checked && trueCheck === true) {
-                start[29].click();
-                stop[28].click();
-                reset[28].click();
+    function check11() {
 
-            } else if (trueCheck === true) {
-                start[28].click();
-                stop[29].click();
+        if (checkbox[11].checked && trueCheck === true) {
+            start[23].click();
+            stop[22].click();
+            reset[22].click();
 
-            } else {
-                console.log("start is not on")
-            }
-        });
-        checkbox[15].addEventListener('change', function () {
+        } else if (trueCheck === true) {
+            start[22].click();
+            stop[23].click();
 
-            if (checkbox[15].checked && trueCheck === true) {
-                start[31].click();
-                stop[30].click();
-                reset[30].click();
+        } else {
+            console.log("start is not on")
+        }
+    }
 
-            } else if (trueCheck === true) {
-                start[30].click();
-                stop[31].click();
+    function check12() {
 
-            } else {
-                console.log("start is not on")
-            }
-        });
-    });
+        if (checkbox[12].checked && trueCheck === true) {
+            start[25].click();
+            stop[24].click();
+            reset[24].click();
 
+        } else if (trueCheck === true) {
+            start[24].click();
+            stop[25].click();
+
+        } else {
+            console.log("start is not on")
+        }
+    }
+
+    function check13() {
+
+        if (checkbox[13].checked && trueCheck === true) {
+            start[27].click();
+            stop[26].click();
+            reset[26].click();
+
+        } else if (trueCheck === true) {
+            start[26].click();
+            stop[27].click();
+
+        } else {
+            console.log("start is not on")
+        }
+    }
+
+    function check14() {
+
+        if (checkbox[14].checked && trueCheck === true) {
+            start[29].click();
+            stop[28].click();
+            reset[28].click();
+
+        } else if (trueCheck === true) {
+            start[28].click();
+            stop[29].click();
+
+        } else {
+            console.log("start is not on")
+        }
+    }
+
+    function check15() {
+
+        if (checkbox[15].checked && trueCheck === true) {
+            start[31].click();
+            stop[30].click();
+            reset[30].click();
+
+        } else if (trueCheck === true) {
+            start[30].click();
+            stop[31].click();
+
+        } else {
+            console.log("start is not on")
+        }
+    }
+});
 
 // code under this comment is to build div for every player
 
@@ -455,13 +505,6 @@ for (let i = 0, len = elems.length; i < len; i++) {
     new Stopwatch(elems[i]);
 }
 
-function startBtn() {
-    trueCheck = true;
-    let startBtn = document.querySelectorAll("a[href='#start']")
-    for (let i = 0; i < startBtn.length; i++)
-        startBtn[i].click();
-
-}
 
 function stopBtn() {
     trueCheck = false;
@@ -562,10 +605,6 @@ function drag(e) {
 function setTranslate(xPos, yPos, el) {
     el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
 }
-
-
-// code under this comment is to make the stopwatch.
-
 
 // code under this comment is to be able to input the text in add and remove player with the enter key.
 
