@@ -36,6 +36,7 @@ function resultsButton() {
     $("#watchGroup").hide();
     $(".btngroup").hide();
     $(".img-block").hide();
+    document.getElementById("results-area").innerHTML = resultsTable();
 }
 
 // the code under this comment is to add or remove players via button from the players array.
@@ -47,6 +48,7 @@ function addPlayer() {
         players.push(add.value);
         document.getElementById("table").innerHTML = buildTable();
         document.getElementById("error").innerHTML = ``;
+
     }
 }
 
@@ -606,7 +608,40 @@ function setTranslate(xPos, yPos, el) {
     el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
 }
 
+
+function resultsTable() {
+    let html = `
+  <table id="resultsTable">
+    <thead>
+      <tr>
+        <th>Players:</th>
+        <th>Time played</th>
+        <th>Time played</th>
+      </tr>
+    </thead>
+    <tbody>
+`;
+
+    for (let player of players) {
+        let rowHtml = `
+    <tr>
+      <td>${player}</td>
+    <td> 10</td>
+    <td> 10</td>
+    </tr>
+  `;
+        html += rowHtml;
+    }
+    html += `
+  </tbody>
+</table>
+`;
+    return html;
+}
+
+
 // code under this comment is to be able to input the text in add and remove player with the enter key.
+
 
 //document.getElementById("nameAdd").addEventListener("keydown",function (event){
 // if(event.key === "Enter"){

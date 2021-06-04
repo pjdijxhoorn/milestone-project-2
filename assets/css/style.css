@@ -321,7 +321,18 @@ input:checked + .slider:before {
 .label {
     border: 1px solid black;
     padding: 5px;
-    width: 100px;
+    width: 80px;
     font-weight: 600;
     background-color: #79A33E;
+}
+
+#resultsTable {
+    padding: 10px 10px 10px 10px;
+    table-layout: fixed;
+    margin-top: 5px;
+}
+
+
+#resultsTable tr, td, th{
+    height: 20px;
 }
