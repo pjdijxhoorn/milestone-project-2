@@ -1,5 +1,4 @@
-let players = ["Timothy", "Harriet", "paulus", "hendrik", "charles", "rick", "benjamin", "Tom",
-    "Tjonge",];
+let players = [];
 let trueCheck = false;
 
 // the code under this comment is to hide/show the home, timer and results content.
