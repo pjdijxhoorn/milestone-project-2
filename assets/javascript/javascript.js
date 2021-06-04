@@ -1,4 +1,4 @@
-let players = [];
+let players = ["tim", "harry", "paul", "rick", "arthur", "bliep",];
 let trueCheck = false;
 
 // the code under this comment is to hide/show the home, timer and results content.
@@ -35,7 +35,8 @@ function resultsButton() {
     $("#watchGroup").hide();
     $(".btngroup").hide();
     $(".img-block").hide();
-    document.getElementById("results-area").innerHTML = resultsTable();
+    addNames();
+    printTime();
 }
 
 // the code under this comment is to add or remove players via button from the players array.
@@ -97,6 +98,10 @@ function addNames() {
     let spans = document.querySelectorAll('div[class="name"]');
     for (let i = 0; i < players.length; i++) {
         spans[i].innerHTML = players[i];
+    }
+    let tds = document.querySelectorAll('td[class="player"]')
+    for (let i = 0; i < players.length; i++) {
+        tds[i].innerHTML = players[i];
     }
 }
 
@@ -607,35 +612,36 @@ function setTranslate(xPos, yPos, el) {
     el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
 }
 
+function printTime(){
+    let times = document.querySelectorAll("span span");
+    let field = document.querySelectorAll('td[class="fieldTime"]')
+    let overall = document.querySelectorAll('td[class="benchTime"]')
 
-function resultsTable() {
-    let html = `
-  <table id="resultsTable">
-    <thead>
-      <tr>
-        <th>Players:</th>
-        <th>Time played</th>
-        <th>Time played</th>
-      </tr>
-    </thead>
-    <tbody>
-`;
-
-    for (let player of players) {
-        let rowHtml = `
-    <tr>
-      <td>${player}</td>
-    <td> 10</td>
-    <td> 10</td>
-    </tr>
-  `;
-        html += rowHtml;
+    for (let i=0; i<overall.length; i++){
+        overall[i].innerHTML = times[32].innerHTML;
     }
-    html += `
-  </tbody>
-</table>
-`;
-    return html;
+
+    field[0].innerHTML = times[1].innerHTML;
+    field[1].innerHTML = times[3].innerHTML;
+    field[2].innerHTML = times[5].innerHTML;
+    field[3].innerHTML = times[7].innerHTML;
+    field[4].innerHTML = times[9].innerHTML;
+    field[5].innerHTML = times[11].innerHTML;
+    field[6].innerHTML = times[13].innerHTML;
+    field[7].innerHTML = times[15].innerHTML;
+    field[8].innerHTML = times[17].innerHTML;
+    field[9].innerHTML = times[19].innerHTML;
+    field[10].innerHTML = times[21].innerHTML;
+    field[11].innerHTML = times[23].innerHTML;
+    field[12].innerHTML = times[25].innerHTML;
+    field[13].innerHTML = times[27].innerHTML;
+    field[14].innerHTML = times[29].innerHTML;
+    field[15].innerHTML = times[31].innerHTML;
+
+
+
+
+
 }
 
 
