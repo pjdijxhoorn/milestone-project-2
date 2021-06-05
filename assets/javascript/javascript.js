@@ -3,7 +3,6 @@ let trueCheck = false;
 
 // the code under this comment is to hide/show the home, timer and results content.
 homeButton();
-
 function homeButton() {
     $(".content-area-timer").hide();
     $(".content-area-results").hide();
@@ -92,8 +91,7 @@ function buildTable() {
     return html;
 }
 
-
-// the code below is to add names to the timer page
+// the code below is to add names to the timer  and result pages
 function addNames() {
     let spans = document.querySelectorAll('div[class="name"]');
     for (let i = 0; i < players.length; i++) {
@@ -105,8 +103,7 @@ function addNames() {
     }
 }
 
-// the code below is for the toggle buttons to switch between timers
-
+// the code below is for the toggle buttons to switch between bench and field timers
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -409,7 +406,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// code under this comment is to build div for every player
+// code under this comment is to build the stopwatches
 
 let Stopwatch = function (elem, options) {
     let timer = createTimer(),
@@ -505,13 +502,12 @@ let Stopwatch = function (elem, options) {
     this.reset = reset;
 };
 
-
 let elems = document.getElementsByClassName("basic");
 for (let i = 0, len = elems.length; i < len; i++) {
     new Stopwatch(elems[i]);
 }
 
-
+// code under this comment is for the stop and reset functions
 function stopBtn() {
     trueCheck = false;
     let stopBtn = document.querySelectorAll("a[href='#stop']")
@@ -526,7 +522,7 @@ function resetBtn() {
 }
 
 
-// to create dragable blocks.
+// code under this comment is to create the drag-able blocks.
 
 function createDivs() {
     for (let player in players) {
@@ -612,6 +608,8 @@ function setTranslate(xPos, yPos, el) {
     el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
 }
 
+
+// the code under here is to print all the times to the results page
 function printTime(){
     let times = document.querySelectorAll("span span");
     let field = document.querySelectorAll('td[class="fieldTime"]')
@@ -637,13 +635,7 @@ function printTime(){
     field[13].innerHTML = times[27].innerHTML;
     field[14].innerHTML = times[29].innerHTML;
     field[15].innerHTML = times[31].innerHTML;
-
-
-
-
-
 }
-
 
 // code under this comment is to be able to input the text in add and remove player with the enter key.
 
