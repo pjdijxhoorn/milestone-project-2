@@ -3,7 +3,7 @@ let trueCheck = false;
 
 // the code under this comment is to hide/show the home, timer and results content.
 homeButton();
-
+document.getElementById("home-button").addEventListener("click", homeButton);
 function homeButton() {
     $(".content-area-timer").hide();
     $(".content-area-results").hide();
@@ -13,6 +13,7 @@ function homeButton() {
     $(".img-block").hide();
 }
 
+document.getElementById("timer-button").addEventListener("click", timerButton);
 function timerButton() {
     $(".content-area-timer").show();
     $(".img-block").show();
@@ -26,6 +27,7 @@ function timerButton() {
     addNames();
 
 }
+document.getElementById("results-button").addEventListener("click", resultsButton);
 function resultsButton() {
     $(".content-area-timer").hide();
     $(".content-area-results").show();
@@ -38,6 +40,7 @@ function resultsButton() {
 }
 
 // the code under this comment is to add or remove players via button from the players array.
+document.getElementById("add-Btn").addEventListener("click", addPlayer);
 function addPlayer() {
     let add = document.getElementById("nameAdd");
     if (add.value === "") {
@@ -49,7 +52,7 @@ function addPlayer() {
 
     }
 }
-
+document.getElementById("rem-Btn").addEventListener("click", RemovePlayer);
 function RemovePlayer() {
     let Remove = document.getElementById("nameRem");
     if (players.includes(Remove.value)) {
@@ -475,6 +478,7 @@ for (let i = 0, len = elems.length; i < len; i++) {
 }
 
 // code under this comment is for the stop and reset functions
+document.getElementById("stop").addEventListener("click", stopBtn);
 function stopBtn() {
     trueCheck = false;
     let stopBtn = document.querySelectorAll("a[href='#stop']");
@@ -482,6 +486,7 @@ function stopBtn() {
         stopBtn[i].click();
 }
 
+document.getElementById("reset").addEventListener("click", resetBtn);
 function resetBtn() {
     let resetBtn = document.querySelectorAll("a[href='#reset']");
     for (let i = 0; i < resetBtn.length; i++)

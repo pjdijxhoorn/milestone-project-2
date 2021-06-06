@@ -25,14 +25,14 @@
 <header class="sticky-top">
     <nav>
         <ul id="nav" class="list-inline menu-container sticky-top">
-            <li class="col-4 list-inline-item menu-button menu-button-color " onclick="homeButton()">
+            <li id="home-button" class="col-4 list-inline-item menu-button menu-button-color home-button">
                 <a class="hvr-fade" href="#"><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></a>
             </li>
-            <li class="col-4 list-inline-item menu-button menu-button-color timer-button" onclick="timerButton()">
+            <li id="timer-button"class="col-4 list-inline-item menu-button menu-button-color timer-button">
                 <a class="hvr-fade" href="#"><i class="fas fa-stopwatch-20"
                                                 aria-hidden="true"></i><span>Timer</span></a>
             </li>
-            <li class="col-4 list-inline-item menu-button menu-button-color results-button" onclick="resultsButton()">
+            <li id="results-button" class="col-4 list-inline-item menu-button menu-button-color results-button">
                 <a class="hvr-fade" href="#"><i class="fas fa-poll" aria-hidden="true"></i><span>Results</span></a>
             </li>
         </ul>
@@ -55,14 +55,14 @@
                 <label>
                     <input type="text" id="nameAdd" name="username" required>
                 </label>
-                <input id="add-Btn" type="button" value="Add player" onclick="addPlayer()">
+                <input id="add-Btn" type="button" value="Add player">
             </div>
             <div class="col-12">
                 <label>
 
                     <input type="text" id="nameRem" name="username">
                 </label>
-                <input id="rem-Btn" type="button" value="Remove player" onclick="RemovePlayer()">
+                <input id="rem-Btn" type="button" value="Remove player">
             </div>
         </form>
         <div id="error">
@@ -287,8 +287,8 @@
         </tr>
         <tr>
             <td class="player">Player 3</td>
-            <td class="fieldTime"> 10</td>
-            <td class="benchTime"> 10</td>
+            <td class="fieldTime"></td>
+            <td class="benchTime"></td>
         </tr>
         <tr>
             <td class="player">Player 4</td>
