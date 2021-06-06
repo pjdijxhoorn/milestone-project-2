@@ -109,6 +109,7 @@ header {
     width: 40%;
     text-transform: uppercase;
     font-weight: bold;
+    color: white;
 }
 
 #nameAdd {
@@ -116,20 +117,6 @@ header {
     width: 60%;
     border: 2px black solid;
 }
-
-#rem-Btn {
-    background-color: #F38882;
-    width: 40%;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-#nameRem {
-    margin: 5px 5px 5px 10px;
-    width: 60%;
-    border: 2px black solid;
-}
-
 /*----------table homepage*/
 #table {
     padding: 10px 10px 10px 10px;
@@ -310,8 +297,6 @@ input:checked + .slider:before {
 
 #timerTable {
     table-layout: fixed;
-    padding: 5px;
-    margin: 5px;
 }
 
 #timerTable, tr, td, th {
@@ -322,7 +307,7 @@ input:checked + .slider:before {
 }
 
 #timerTable td, th {
-    padding: 5px 5px;
+    padding: 5px 0;
 }
 
 #timerTable thead {
