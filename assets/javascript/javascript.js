@@ -3,6 +3,7 @@ let trueCheck = false;
 
 // the code under this comment is to hide/show the home, timer and results content.
 homeButton();
+
 function homeButton() {
     $(".content-area-timer").hide();
     $(".content-area-results").hide();
@@ -24,9 +25,7 @@ function timerButton() {
     createDivs();
     addNames();
 
-
 }
-
 function resultsButton() {
     $(".content-area-timer").hide();
     $(".content-area-results").show();
@@ -97,7 +96,7 @@ function addNames() {
     for (let i = 0; i < players.length; i++) {
         spans[i].innerHTML = players[i];
     }
-    let tds = document.querySelectorAll('td[class="player"]')
+    let tds = document.querySelectorAll('td[class="player"]');
     for (let i = 0; i < players.length; i++) {
         tds[i].innerHTML = players[i];
     }
@@ -112,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let stop = document.querySelectorAll("a[href='#stop']");
     let reset = document.querySelectorAll("a[href='#reset']");
 
-    document.getElementById("start").addEventListener("click", startBtn)
+    document.getElementById("start").addEventListener("click", startBtn);
 
     function startBtn() {
         trueCheck = true;
@@ -163,8 +162,6 @@ document.addEventListener('DOMContentLoaded', function () {
             start[0].click();
             stop[1].click();
 
-        } else {
-            console.log("start is not on")
         }
     }
 
@@ -178,8 +175,6 @@ document.addEventListener('DOMContentLoaded', function () {
             start[2].click();
             stop[3].click();
 
-        } else {
-            console.log("start is not on")
         }
     }
 
@@ -193,8 +188,6 @@ document.addEventListener('DOMContentLoaded', function () {
             start[4].click();
             stop[5].click();
 
-        } else {
-            console.log("start is not on")
         }
     }
 
@@ -209,8 +202,6 @@ document.addEventListener('DOMContentLoaded', function () {
             start[6].click();
             stop[7].click();
 
-        } else {
-            console.log("start is not on")
         }
     }
 
@@ -225,8 +216,6 @@ document.addEventListener('DOMContentLoaded', function () {
             start[8].click();
             stop[9].click();
 
-        } else {
-            console.log("start is not on")
         }
     }
 
@@ -241,8 +230,6 @@ document.addEventListener('DOMContentLoaded', function () {
             start[10].click();
             stop[11].click();
 
-        } else {
-            console.log("start is not on")
         }
     }
 
@@ -256,8 +243,6 @@ document.addEventListener('DOMContentLoaded', function () {
             start[12].click();
             stop[13].click();
 
-        } else {
-            console.log("start is not on")
         }
     }
 
@@ -272,8 +257,6 @@ document.addEventListener('DOMContentLoaded', function () {
             start[14].click();
             stop[15].click();
 
-        } else {
-            console.log("start is not on")
         }
     }
 
@@ -288,8 +271,6 @@ document.addEventListener('DOMContentLoaded', function () {
             start[16].click();
             stop[17].click();
 
-        } else {
-            console.log("start is not on")
         }
     }
 
@@ -304,8 +285,6 @@ document.addEventListener('DOMContentLoaded', function () {
             start[18].click();
             stop[19].click();
 
-        } else {
-            console.log("start is not on")
         }
     }
 
@@ -320,8 +299,6 @@ document.addEventListener('DOMContentLoaded', function () {
             start[20].click();
             stop[21].click();
 
-        } else {
-            console.log("start is not on")
         }
     }
 
@@ -336,8 +313,6 @@ document.addEventListener('DOMContentLoaded', function () {
             start[22].click();
             stop[23].click();
 
-        } else {
-            console.log("start is not on")
         }
     }
 
@@ -352,8 +327,6 @@ document.addEventListener('DOMContentLoaded', function () {
             start[24].click();
             stop[25].click();
 
-        } else {
-            console.log("start is not on")
         }
     }
 
@@ -368,8 +341,6 @@ document.addEventListener('DOMContentLoaded', function () {
             start[26].click();
             stop[27].click();
 
-        } else {
-            console.log("start is not on")
         }
     }
 
@@ -384,8 +355,6 @@ document.addEventListener('DOMContentLoaded', function () {
             start[28].click();
             stop[29].click();
 
-        } else {
-            console.log("start is not on")
         }
     }
 
@@ -400,8 +369,6 @@ document.addEventListener('DOMContentLoaded', function () {
             start[30].click();
             stop[31].click();
 
-        } else {
-            console.log("start is not on")
         }
     }
 });
@@ -504,19 +471,19 @@ let Stopwatch = function (elem, options) {
 
 let elems = document.getElementsByClassName("basic");
 for (let i = 0, len = elems.length; i < len; i++) {
-    new Stopwatch(elems[i]);
+    Stopwatch(elems[i]);
 }
 
 // code under this comment is for the stop and reset functions
 function stopBtn() {
     trueCheck = false;
-    let stopBtn = document.querySelectorAll("a[href='#stop']")
+    let stopBtn = document.querySelectorAll("a[href='#stop']");
     for (let i = 0; i < stopBtn.length; i++)
         stopBtn[i].click();
 }
 
 function resetBtn() {
-    let resetBtn = document.querySelectorAll("a[href='#reset']")
+    let resetBtn = document.querySelectorAll("a[href='#reset']");
     for (let i = 0; i < resetBtn.length; i++)
         resetBtn[i].click();
 }
@@ -527,7 +494,7 @@ function resetBtn() {
 function createDivs() {
     for (let player in players) {
         let newElement = document.createElement('div');
-        newElement.className = "item d-none d-sm-block d-md-block;"
+        newElement.className = "item d-none d-sm-block d-md-block;";
         newElement.innerHTML = `${players[player]}`;
         document.getElementById("container").appendChild(newElement);
     }
@@ -610,12 +577,12 @@ function setTranslate(xPos, yPos, el) {
 
 
 // the code under here is to print all the times to the results page
-function printTime(){
+function printTime() {
     let times = document.querySelectorAll("span span");
-    let field = document.querySelectorAll('td[class="fieldTime"]')
-    let overall = document.querySelectorAll('td[class="benchTime"]')
+    let field = document.querySelectorAll('td[class="fieldTime"]');
+    let overall = document.querySelectorAll('td[class="benchTime"]');
 
-    for (let i=0; i<overall.length; i++){
+    for (let i = 0; i < overall.length; i++) {
         overall[i].innerHTML = times[32].innerHTML;
     }
 
@@ -637,16 +604,3 @@ function printTime(){
     field[15].innerHTML = times[31].innerHTML;
 }
 
-// code under this comment is to be able to input the text in add and remove player with the enter key.
-
-
-//document.getElementById("nameAdd").addEventListener("keydown",function (event){
-// if(event.key === "Enter"){
-// addPlayer();
-// }
-//});
-//document.getElementById("nameRem").addEventListener("keydown",function (event){
-// if(event.key === "Enter"){
-//   RemovePlayer();
-// }
-//})
