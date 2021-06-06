@@ -1,4 +1,6 @@
 let players = [];
+
+// the trueCheck test if the start button is turned on. so a toggle-switch only turns on a timer if the start button is also on.
 let trueCheck = false;
 
 // the code under this comment is to hide/show the home, timer and results content.
@@ -45,24 +47,16 @@ function addPlayer() {
     let add = document.getElementById("nameAdd");
     if (add.value === "") {
         document.getElementById("error").innerHTML = `You didn't fill in a Name!`;
-    } else {
+    } else if(players.length<16){
         players.push(add.value);
         document.getElementById("table").innerHTML = buildTable();
+        addDeleteButtons();
         document.getElementById("error").innerHTML = ``;
 
+    }else{
+        document.getElementById("error").innerHTML = `You reached the maximum of 16 players`;
     }
-}
-document.getElementById("rem-Btn").addEventListener("click", RemovePlayer);
-function RemovePlayer() {
-    let Remove = document.getElementById("nameRem");
-    if (players.includes(Remove.value)) {
-        let number = players.indexOf(Remove.value);
-        players.splice(number, 1);
-        document.getElementById("table").innerHTML = buildTable();
-        document.getElementById("error").innerHTML = ``;
-    } else {
-        document.getElementById("error").innerHTML = `This person is not on the list!`;
-    }
+
 }
 
 // code under this comment is to build a players list table from the player array.
@@ -80,10 +74,11 @@ function buildTable() {
 
     for (let player of players) {
         let rowHtml = `
-    <tr>
-      <td>${player}</td>
+    <tr class="remove">
+      <td >${player} <button class="delete"><i class="far fa-trash-alt"></i></button></td>
     </tr>
   `;
+
         html += rowHtml;
     }
     html += `
@@ -92,10 +87,22 @@ function buildTable() {
 `;
     return html;
 }
+function addDeleteButtons(){
+let remove = document.querySelectorAll('.delete');
+for (let i = 0; i < remove.length; i++) {
+(function(index) {
+remove[index].addEventListener("click", function() {
+    players.splice(index, 1);
+    $(this.parentElement.parentElement).remove();
+         })
+   })(i);
+}}
+
+
 
 // the code below is to add names to the timer  and result pages
 function addNames() {
-    let spans = document.querySelectorAll('div[class="name"]');
+    let spans = document.querySelectorAll('td[class="name"]');
     for (let i = 0; i < players.length; i++) {
         spans[i].innerHTML = players[i];
     }
@@ -497,10 +504,10 @@ function resetBtn() {
 // code under this comment is to create the drag-able blocks.
 
 function createDivs() {
-    for (let player in players) {
+    for (let i= 0; i<players.length; i++) {
         let newElement = document.createElement('div');
         newElement.className = "item d-none d-sm-block d-md-block;";
-        newElement.innerHTML = `${players[player]}`;
+        newElement.innerHTML = `${players[i]}`;
         document.getElementById("container").appendChild(newElement);
     }
 }
