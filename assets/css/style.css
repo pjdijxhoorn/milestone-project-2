@@ -315,7 +315,7 @@ input:checked + .slider:before {
 }
 
 #timerTable, tr, td, th {
-    border: none;
+    border: 1px solid black;
     text-align: center;
     color: black;
     width: 100%;
