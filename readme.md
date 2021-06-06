@@ -10,7 +10,7 @@ drag too much equipment around there for this website is designed to be able to 
 It is designed with a phone in mind, for (beginning) coaches will probably use phones or ipads for their coaching on the
 field.
 
-![alt text](assets/images/coach helper.PNG?raw=true)
+![alt text](assets/images/website.PNG?raw=true)
 
 ## User Experience (UX)
 
@@ -108,7 +108,7 @@ field.
           the field-timers will run. When removing the blocks from the field the bench timers will run.
         - On the results page replace the overall time with total bench time
         - a way to store a team/ names for the next match.
-        - Make the code more dry. The code is working but due to time constrains some of the more complex code is
+        - refactor the code so that it is using code more dry. The code is working but due to time constrains some of the more complex code is
           repeated and there is room to improve.
         - A way to store results over a longer time. Maybe with a screenshot of the results or better a results page
           that also counts time over multiple matches.
