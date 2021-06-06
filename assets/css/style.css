@@ -97,7 +97,7 @@ header {
 }
 
 #error {
-    color: red;
+    color: black;
     text-align: center;
     text-transform: uppercase;
     font-weight: 500;
@@ -112,21 +112,21 @@ header {
 }
 
 #nameAdd {
-    margin: 0 5px 5px 10px;
-    width: 90%;
+    margin: 5px 5px 5px 10px;
+    width: 60%;
     border: 2px black solid;
 }
 
 #rem-Btn {
-    background-color: red;
+    background-color: #F38882;
     width: 40%;
     text-transform: uppercase;
     font-weight: bold;
 }
 
 #nameRem {
-    margin: 0 5px 0 10px;
-    width: 90%;
+    margin: 5px 5px 5px 10px;
+    width: 60%;
     border: 2px black solid;
 }
 
@@ -159,7 +159,10 @@ td, th {
     min-height: 600px;
 }
 
-/*----------Timer page*/
+.timerText {
+    padding: 5px;
+}
+
 /*----------toggle buttons*/
 .switch {
     position: relative;
@@ -305,25 +308,26 @@ input:checked + .slider:before {
     display: inline-block;
 }
 
-.name {
-    border: 1px solid black;
+#timerTable {
+    table-layout: fixed;
     padding: 5px;
-    margin-left: 5px;
-    width: 100px;
-    display: inline-block;
+    margin: 5px;
 }
 
-.labelGroup {
-    padding: 0 5px;
-    margin-bottom: 5px;
+#timerTable, tr, td, th {
+    border: none;
+    text-align: center;
+    color: black;
+    width: 100%;
 }
 
-.label {
-    border: 1px solid black;
-    padding: 5px;
-    width: 80px;
-    font-weight: 600;
+#timerTable td, th {
+    padding: 5px 5px;
+}
+
+#timerTable thead {
     background-color: #79A33E;
+    border: 1px solid black;
 }
 
 #resultsTable {
@@ -331,7 +335,6 @@ input:checked + .slider:before {
     table-layout: fixed;
     margin-top: 5px;
 }
-
 
 #resultsTable tr, td, th {
     height: 20px;
