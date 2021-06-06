@@ -28,9 +28,10 @@ field.
     -   #### Returning Visitor Goals
 
         1. As a Returning Visitor, I want to use the timer function.
-        2. As a Returning Visitor, I want to be able to easily switch plabench to field and vice versa.
-        3. As a Returning Visitor, I want to be able to make a players lisyers timers from t.
-        4. As a Returning Visitor, I want to be able to use this website on a phone and tablet while on the hockey pitch
+        2. As a Returning Visitor, I want to be able to easily switch bench to field timers and vice versa.
+        3. As a Returning Visitor, I want to be able to make a players list.
+        4. As a Returning Visitor, I want to be able to use this website on a phone and tablet while on the hockey
+           pitch.
 
     -   #### Frequent User Goals
         1. As a Frequent User, I want to see results of matches.
@@ -108,8 +109,8 @@ field.
           the field-timers will run. When removing the blocks from the field the bench timers will run.
         - On the results page replace the overall time with total bench time
         - a way to store a team/ names for the next match.
-        - refactor the code so that it is using code more dry. The code is working but due to time constrains some of the more complex code is
-          repeated and there is room to improve.
+        - refactor the code so that it is using code more dry. The code is working but due to time constrains some of
+          the more complex code is repeated and there is room to improve.
         - A way to store results over a longer time. Maybe with a screenshot of the results or better a results page
           that also counts time over multiple matches.
         - Testing with for example jasmine to test the more complex code on the timer functions.
@@ -140,20 +141,93 @@ field.
 
 ## Testing
 
-- on webstorm i get warnings for .hide functions
+Webstorm has a build-in code validator, So the code was checked at the moment it was written. However, the code was also
+tested using the W3C Markup Validator, The W3C CSS Validator and the JShint validator Services, to make sure that there
+weren't any errors in the project.
+
+[W3C Markup Validator](https://validator.w3.org/)
+![alt text](assets/images/html test.PNG?raw=true)
+
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
+![alt text](assets/images/csscheck.PNG?raw=true)
+
+[jshint javascrip validator](https://jshint.com/)
+![alt text](assets/images/javascripttest.PNG?raw=true)
 
 ### Testing User Stories from User Experience (UX) Section
 
 -   #### First Time Visitor Goals
+    1. As a First Time Visitor, I want to know what the site is about and how the site works. The expected first time
+       visitors would be (beginning) coaches for fieldhockey.  
+       I want them to understand that this is a tool for them to use to time players field and bench time.
+
+       1.On the first page there is a explanation what the website does and how to create a players-list 2.On the timer
+       page there is 1 text-blocks to explain the functions on that page. For ipad screen size or up there is a second
+       text-block that explains the field, and the drag-able blocks.
+
+    2. As a First Time Visitor, I want to have no trouble to find all the information and functions of the website
+       therefore I want a clear cut navigation and clear explanations of the functions of the site.
+
+       1.All the pages have a minimalistic build so to not distract users. 2.There is a nav-bar at the top which is
+       sticky so that the users can always go to anyt part of the site with just one click.
+
+    3. As a First Time Visitor, I want to discover how the timer functions work.
+
+       1.On the timer page there is a explanation of the timer and how it works. 2.To make it more intuitive I added
+       icons to the buttons for stop, start and reset. 3.To make it more intuitive I made the toggle-switch so that when
+       you slide it to a side that timer starts running.
+
 -   #### Returning Visitor Goals
+    1. As a Returning Visitor, I want to use the timer function.
+       
+        1.the timer is on the timer page and is working well.
+       
+    2. As a Returning Visitor, I want to be able to easily switch bench to field timers and vice versa.
+       
+        1. switching players is just 1 swipe of a button, and the timers switch from bench to field and the other way around.
+           Note that the main timer should be running to start any timers this is done by pressing the start button.
+        
+    3. As a Returning Visitor, I want to be able to make a players list.
+        
+        1.on the first page you can make a player-list by typing in the player names and hitting the add player button. 
+       When you made a mistake, or you want to switch players you can delete players by the delete icon behind the names
+       of the players.
+       
+    4. As a Returning Visitor, I want to be able to use this website on a phone and tablet while on the hockey pitch.
+
+        1.the website is build with mobile phone and ipad in mind. For it is expected that most (beginning)coaches 
+       will not have something bigger then an ipad with them. It does work on pc.
+       the main function of timing is build mostly for phones for it can be expected that all coaches have at least 
+       a phone. this makes it accesabilty for coaches high and there for its useability high as well 
+       
 -   #### Frequent User Goals
+    1. As a Frequent User, I want to see results of matches.
+
+       1.On the results page you can see the total match time and the time played for each player.
+
+    2. As a Frequent User, I want to store my team.
+
+       1.Storing the team isn't possible yet but this is a feature that will be coming up.
+
+    3. As a Frequent User, I want to see additional functionality
+    
+        1. As described in the future features there will be more features in the future. I will be in constant dailoge
+           with users on my field hockey club at what they are still missing and what could be improved.
 
 ### Further Testing
 
+- The website was tested on Google Chrome, Microsoft Edge .
+- The website was tested with a android phone, a desktop, a laptop and an ipad. The pages were tested vigorously to make
+  sure that all the links were working.
+- The pages were tested vigorously to make sure that all the links were working.
+- the site was tested on if all the functions / interactive parts were working.
+
 ### know bugs
 
-- toggleswithes on the timer page seem to go of center
-- while useing webstorm the jquery functions of .hide gives inline errors.
+- When adding the same name to the player list several times, hinders removing that name.
+- While using webstorm the jquery functions of .hide gives inline errors.
+- When removing names from the player list the names stay in the other two tables however they can be overwritten when
+  adding new names.
 
 ## Deployment
 
@@ -165,27 +239,29 @@ The project was deployed to GitHub Pages using the following steps...
 2. Under the github logo left upper corner you have the repository name. Under that is menu bar. Here you click
    settings.
 3. On this new page you get a vertical menu bar here you click on pages.
-4. when you clicked pages you will see the "GitHub Pages" Section. you click the branch button under "source" instead of
+4. When you clicked pages you will see the "GitHub Pages" Section. you click the branch button under "source" instead of
    none you select "master" and, press save.
 5. The page should refresh itself.
 6. After this you should see the deployed site [link](https://pjdijxhoorn.github.io/milestone-project-2/).
 
 ### Forking the GitHub Repository
 
--  When you fork a repository on Github you make a copy of the original. By doing this you can view and make changes
-   without the original changing. you can fork the repository with these steps:
+- When you fork a repository on Github you make a copy of the original. By doing this you can view and make changes
+  without the original changing. You can fork the repository with these steps:
 
 1. Locate the  [GitHub Repository](https://github.com/pjdijxhoorn/milestone-project-2) After you logged in.
 2. On the left top of the site you will find the fork button press it.
 3. This should provide you with a copy of the repository in your own github account.
 
 ### Making a Local Clone
-1. Sign in/up to Github and go to the main page of the repository [GitHub Repository](https://github.com/pjdijxhoorn/milestone-project-2)
-2. Above the files  click the button for Code.
+
+1. Sign in/up to Github and go to the main page of the
+   repository [GitHub Repository](https://github.com/pjdijxhoorn/milestone-project-2)
+2. Above the files click the button for Code.
 3. Copy the link under the HTTPS tab.
 4. Open your code editor.
-5. open a new work directory, or a existing one where you want the directory to be created.
-6. in the command line write `git clone`, and after that paste the URL you from Step 3 and hit enter.
+5. Open a new work directory, or a existing one where you want the directory to be created.
+6. In the command line write `git clone`, and after that paste the URL you from Step 3 and hit enter.
 
         Cloning into 'milestone-project-2'...
         remote: Enumerating objects: 258, done.
@@ -194,7 +270,6 @@ The project was deployed to GitHub Pages using the following steps...
         Receiving objects:  71% (184/258)
         Receiving objects: 100% (258/258), 1.15 MiB | 4.22 MiB/s, done.
         Resolving deltas: 100% (117/117), done.
-
 
 ## Credits
 
@@ -206,10 +281,11 @@ The project was deployed to GitHub Pages using the following steps...
 
 ### Content
 
-- all text content was written by the developer
+- All text content was written by the developer
 
 ### Acknowledgements
 
 - My Mentor for the feedback and support.
 - The trainers coaches of the field Hockeyclub Oranje-Rood, For the talks about what problems the run into while
-  coaching. 
+  coaching.
+- The teams of field Hockeyclub Oranje-Rood for testing the website and its usefulness.
