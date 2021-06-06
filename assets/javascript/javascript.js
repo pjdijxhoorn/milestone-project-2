@@ -23,7 +23,6 @@ function timerButton() {
     $("#watchGroup").show();
     $(".content-area-results").hide();
     $(".content-area-home").hide();
-
     $(".item").remove();
     createDivs();
     addNames();
@@ -94,7 +93,8 @@ for (let i = 0; i < remove.length; i++) {
 remove[index].addEventListener("click", function() {
     players.splice(index, 1);
     $(this.parentElement.parentElement).remove();
-         })
+    addNames();
+         });
    })(i);
 }}
 
