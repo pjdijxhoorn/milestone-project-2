@@ -2,13 +2,13 @@
 
 View the live project here. [link](https://pjdijxhoorn.github.io/milestone-project-2/)
 
-This is A website to help Fieldhockey coaches solve a real life problem with their coaching. I am a field hockey coach,
-and a problem that I kept running in to as well as most of my colleagues is the subbing(switching) of players and how to
+This is a website to help Fieldhockey coaches solve real life problems. I am a field hockey coach myself,
+and a problem that my colleagues and I kept running in to is the subbing(switching) of players and how to
 keep this as fair as possible. This website is designed to solve that problem by listing all the players and giving them
-stopwatches for both time played and time on the bench. accessibility is important because as coach you don't want to
-drag too much equipment around there for this website is designed to be able to work well on phone, tablet and computer.
-It is designed with a phone in mind, for (beginning) coaches will probably use phones or ipads for their coaching on the
-field.
+stopwatches for both time played and time on the bench. Accessibility is important because as a coach you don't want to
+drag too much equipment around. Therefore, this website is designed to be able to work  on phone, tablet, and computer.
+The website is designed with a phone in mind, aimed at (beginning) coaches who will probably use phones or ipads for 
+their coaching on the field.
 
 ![alt text](assets/images/website.PNG?raw=true)
 
@@ -21,33 +21,33 @@ field.
         1. As a First Time Visitor, I want to know what the site is about and how the site works. The expected first
            time visitors would be (beginning) coaches for fieldhockey.  
            I want them to understand that this is a tool for them to use to time players field and bench time.
-        2. As a First Time Visitor, I want to have no trouble to find all the information and functions of the website
-           therefore I want a clear cut navigation and clear explanations of the functions of the site.
+        2. As a First Time Visitor, I want to have no trouble to find all the information and functions of the website.
+           Therefore, I want a clear cut navigation and clear explanations of the functions of the site.
         3. As a First Time Visitor, I want to discover how the timer functions work.
 
     -   #### Returning Visitor Goals
 
         1. As a Returning Visitor, I want to use the timer function.
-        2. As a Returning Visitor, I want to be able to easily switch bench to field timers and vice versa.
+        2. As a Returning Visitor, I want to be able to easily switch between bench and field timers and vice versa.
         3. As a Returning Visitor, I want to be able to make a players list.
         4. As a Returning Visitor, I want to be able to use this website on a phone and tablet while on the hockey
            pitch.
 
     -   #### Frequent User Goals
         1. As a Frequent User, I want to see results of matches.
-        2. As a Frequent User, I want to store my team.
+        2. As a Frequent User, I want to store the player names of my team.
         3. As a Frequent User, I want to see additional functionality
 
     ## Design
     -   ### Colour Scheme
-        Within this website There are only 3 colors used. two variations of green. One button with a reddish color. The
-        usages of only these 2 variations of green are to not distract the user of the functions of this website. Green
-        was used as main color for this is the color of most of the fields and give a familiar and calming feeling to
+        Within this website only three colors were used. Two variations of green. One button with a reddish color. The
+        usages of these variations of green are to not distract the user of the functions on this website. Green
+        was used as main color for this is the color of most of the fields and gives a calming and familiar feeling to
         users.
 
         ![alt text](assets/validation/Colors.png?raw=true)
 
-        For text the colours black and white were used. White was used for all the menubar buttons. Black was used for
+        For text the colours black and white were used. White was used for all the menubar buttons and black was used for
         all the content text.  
         To ensure that the site is usable for colorblind people the colors were tested with
         https://contrastchecker.com/.
@@ -55,8 +55,8 @@ field.
         The color test - [View](assets/validation/my-wcag-color-samples.pdf)
 
     -   #### Typography
-        The Font-family's used on the website are 'Aldrich', with as back-up sans-serif and 'Roboto Slab', with back-up
-        serif. Aldrich is chosen for the menu-bar for its block/ bold typeface this gives it a Sporty look. Roboto Slab
+        The Font-family's used on the website are 'Aldrich', and 'Roboto Slab' and as back-up sans-serif . 
+        Aldrich is chosen for the menu-bar for its block/ bold typeface this gives it a sporty look. Roboto Slab for all the other content
         was chosen for its easily readability and modern style.
 
 -    ### Imagery
@@ -68,7 +68,7 @@ field.
 
 ## Features
 
-- ### general
+- ### General
 
     - The navigation bar has big buttons, so it is easy to navigate even on mobile devices.
     - The buttons on the site are interactive for computer users to give the users visual conformation. when they mouse
@@ -80,18 +80,19 @@ field.
           used on the next pages as well for all the other functions.
 
     - ### Timer
-        - The timer page has 2 timers for every player. 16 players in total for 16 is the maximum amount of players that
+        - The timer page has two timers for every player. 16 players in total since 16 is the maximum amount of players that
           is allowed to participate within any given match. The names of the homepage will be shown again. If not enough
-          players will be made then the names will be player1 ,player2 etc. Every player will have 1 toggle switch that
-          switches between a bench timer and a field-timer. For a player is either playing or is on the bench. The
+          players will be made then the names will be player 1 , player 2 etc. Every player will have 1 toggle switch that
+          switches between a bench timer and a field-timer. Because a player is either playing or is on the bench. The
           toggle switches are all switched on towards the field-timer. This will save / time actions for the coach
-          Because the coach normally starts with 11 players in the field. On the bottom there are 3 buttons and a
-          mainTimer. The main timer will show the total time that elapsed. The start button wil start the main timer,
-          and the timers that the toggle switches are pointing add. the stop button will stop all the timers, and the
-          reset button will reset all timers. While the timers are running, and you switch from a bench to a field timer
-          the bench-timer resets. This will give the coach a time that the player is on the bench at that sub and not
+          Because the coach normally starts with 11 players on the field. On the bottom there are 3 buttons and a
+          mainTimer. The main timer will show the total time that elapsed. The start button wil start the main timer
+          and the timers that the toggle switches are pointing at. the stop button will stop all the timers, and the
+          reset button will reset all timers. While the timers are running you will be able to switch between bench and
+          field timers. The bench-timer resets when switched to field.
+          This will give the coach a time that the player is on the bench at that particular sub and not
           the overall bench time. Which is more useful for a coach to know for than he can see how long the player has
-          rested and can be subbed in again.
+          rested and when he can be subbed in again.
         - On bigger screens the timer page also shows a field with drag-able name boxes to keep track of the positions
           of all the players in the field. These names again come from the function from the home-page.
 
@@ -99,7 +100,7 @@ field.
         - the results page will display the field time and overall time next to each other for each player. this is a
           timestamp of the timer-page timers. But without the buttons and timers to remove the visual input for users.
 
-    - ### future features
+    - ### Future features
         - The *3 players with most playtime will have their timers turn red to show who is getting fatigued.
         - Counters for goals for opponent and own team.
         - Players on the bench will turn green after 5*min to show that the have rested and can be subbed
@@ -108,8 +109,8 @@ field.
         - Remove stopwatches on a tablet and pc and add timers to the drag-able blocks. When the blocks enter the field,
           the field-timers will run. When removing the blocks from the field the bench timers will run.
         - On the results page replace the overall time with total bench time
-        - a way to store a team/ names for the next match.
-        - refactor the code so that it is using code more dry. The code is working but due to time constrains some of
+        - A way to store a team/ names for the next match.
+        - Refactor the code so that it is using code more dry. The code is working but due to time constrains some of
           the more complex code is repeated and there is room to improve.
         - A way to store results over a longer time. Maybe with a screenshot of the results or better a results page
           that also counts time over multiple matches.
@@ -137,7 +138,7 @@ field.
         1. [Jquery:](https://jquery.com/)
             - jquery was used to simplify the javascript.
         1. [Mockplus classic:](https://www.mockplus.com/)
-            - was used to make the wireframes.
+            - Was used to make the wireframes.
 
 ## Testing
 
@@ -157,48 +158,51 @@ weren't any errors in the project.
 ### Testing User Stories from User Experience (UX) Section
 
 -   #### First Time Visitor Goals
-    1. As a First Time Visitor, I want to know what the site is about and how the site works. The expected first time
-       visitors would be (beginning) coaches for fieldhockey.  
+    1. As a First Time Visitor, I want to know what the site is about and how the site works. The expected first
+       time visitors would be (beginning) coaches for fieldhockey.  
        I want them to understand that this is a tool for them to use to time players field and bench time.
 
        1.On the first page there is an explanation what the website does and how to create a players-list 2.On the timer
        page there is 1 text-blocks to explain the functions on that page. For ipad screen size or up there is a second
        text-block that explains the field, and the drag-able blocks.
 
-    2. As a First Time Visitor, I want to have no trouble to find all the information and functions of the website
-       therefore I want a clear cut navigation and clear explanations of the functions of the site.
+    2.  As a First Time Visitor, I want to have no trouble to find all the information and functions of the website.
+        Therefore, I want a clear cut navigation and clear explanations of the functions of the site.
 
-       1.All the pages have a minimalistic build so to not distract users. 2.There is a nav-bar at the top which is
+       1.All the pages have a minimalistic build so to not distract users. 
+       2.There is a nav-bar at the top which is
        sticky so that the users can always go to any part of the site with just one click.
 
     3. As a First Time Visitor, I want to discover how the timer functions work.
 
-       1.On the timer page there is an explanation of the timer and how it works. 2.To make it more intuitive I added
-       icons to the buttons for stop, start and reset. 3.To make it more intuitive I made the toggle-switch so that when
+       1.On the timer page there is an explanation of the timer and how it works. 
+       2.To make it more intuitive I added icons to the buttons for stop, start and reset. 
+       3.To make it more intuitive I made the toggle-switch so that when
        you slide it to a side that timer starts running.
 
 -   #### Returning Visitor Goals
     1. As a Returning Visitor, I want to use the timer function.
        
-        1.the timer is on the timer page and is working well.
+        1.The timer is on the timer page and is working well.
        
-    2. As a Returning Visitor, I want to be able to easily switch bench to field timers and vice versa.
+    2. As a Returning Visitor, I want to be able to easily switch between bench and field timers and vice versa.
        
-        1. switching players is just 1 swipe of a button, and the timers switch from bench to field and the other way around.
+        1. Switching players is just 1 swipe of a button, and the timers switch from bench to field and the other way around.
            Note that the main timer should be running to start any timers this is done by pressing the start button.
         
     3. As a Returning Visitor, I want to be able to make a players list.
         
-        1.on the first page you can make a player-list by typing in the player names and hitting the add player button. 
+        1.On the first page you can make a player-list by typing in the player names and hitting the add player button. 
        When you made a mistake, or you want to switch players you can delete players by the delete icon behind the names
        of the players.
        
-    4. As a Returning Visitor, I want to be able to use this website on a phone and tablet while on the hockey pitch.
+    4. As a Returning Visitor, I want to be able to use this website on a phone and tablet while on the hockey
+       pitch.
 
-        1.the website is build with mobile phone and ipad in mind. For it is expected that most (beginning)coaches 
+        1.The website is build with mobile phone and ipad in mind. For it is expected that most (beginning)coaches 
        will not have something bigger then an ipad with them. It does work on pc.
        the main function of timing is build mostly for phones for it can be expected that all coaches have at least 
-       a phone. this makes it accessibility for coaches high and there for its usability high as well 
+       a phone. This makes it accessibility for coaches high and there for its usability high as well. 
        
 -   #### Frequent User Goals
     1. As a Frequent User, I want to see results of matches.
@@ -220,7 +224,7 @@ weren't any errors in the project.
 - The website was tested with an android phone, a desktop, a laptop and an ipad. The pages were tested vigorously to make
   sure that all the links were working.
 - The pages were tested vigorously to make sure that all the links were working.
-- the site was tested on if all the functions / interactive parts were working.
+- The site was tested all the functions / interactive parts were working.
 
 ### know bugs
 
@@ -286,6 +290,6 @@ The project was deployed to GitHub Pages using the following steps...
 ### Acknowledgements
 
 - My Mentor for the feedback and support.
-- The trainers and coaches of the field Hockeyclub Oranje-Rood, For the talks about what problems the run into while
+- The trainers and coaches of the field Hockeyclub Oranje-Rood, For the talks about what problems they run into while
   coaching.
 - The teams of field Hockeyclub Oranje-Rood for testing the website and its usefulness.
