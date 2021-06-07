@@ -151,7 +151,7 @@ weren't any errors in the project.
 [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
 ![alt text](assets/images/csscheck.PNG?raw=true)
 
-[jshint javascrip validator](https://jshint.com/)
+[jshint javascript validator](https://jshint.com/)
 ![alt text](assets/images/javascripttest.PNG?raw=true)
 
 ### Testing User Stories from User Experience (UX) Section
@@ -161,7 +161,7 @@ weren't any errors in the project.
        visitors would be (beginning) coaches for fieldhockey.  
        I want them to understand that this is a tool for them to use to time players field and bench time.
 
-       1.On the first page there is a explanation what the website does and how to create a players-list 2.On the timer
+       1.On the first page there is an explanation what the website does and how to create a players-list 2.On the timer
        page there is 1 text-blocks to explain the functions on that page. For ipad screen size or up there is a second
        text-block that explains the field, and the drag-able blocks.
 
@@ -169,11 +169,11 @@ weren't any errors in the project.
        therefore I want a clear cut navigation and clear explanations of the functions of the site.
 
        1.All the pages have a minimalistic build so to not distract users. 2.There is a nav-bar at the top which is
-       sticky so that the users can always go to anyt part of the site with just one click.
+       sticky so that the users can always go to any part of the site with just one click.
 
     3. As a First Time Visitor, I want to discover how the timer functions work.
 
-       1.On the timer page there is a explanation of the timer and how it works. 2.To make it more intuitive I added
+       1.On the timer page there is an explanation of the timer and how it works. 2.To make it more intuitive I added
        icons to the buttons for stop, start and reset. 3.To make it more intuitive I made the toggle-switch so that when
        you slide it to a side that timer starts running.
 
@@ -198,12 +198,12 @@ weren't any errors in the project.
         1.the website is build with mobile phone and ipad in mind. For it is expected that most (beginning)coaches 
        will not have something bigger then an ipad with them. It does work on pc.
        the main function of timing is build mostly for phones for it can be expected that all coaches have at least 
-       a phone. this makes it accesabilty for coaches high and there for its useability high as well 
+       a phone. this makes it accessibility for coaches high and there for its usability high as well 
        
 -   #### Frequent User Goals
     1. As a Frequent User, I want to see results of matches.
 
-       1.On the results page you can see the total match time and the time played for each player.
+       1.On the results page you can see the total match time, and the time played for each player.
 
     2. As a Frequent User, I want to store my team.
 
@@ -211,13 +211,13 @@ weren't any errors in the project.
 
     3. As a Frequent User, I want to see additional functionality
     
-        1. As described in the future features there will be more features in the future. I will be in constant dailoge
+        1. As described in the future features there will be more features in the future. I will be in constant dialogue
            with users on my field hockey club at what they are still missing and what could be improved.
 
 ### Further Testing
 
 - The website was tested on Google Chrome, Microsoft Edge .
-- The website was tested with a android phone, a desktop, a laptop and an ipad. The pages were tested vigorously to make
+- The website was tested with an android phone, a desktop, a laptop and an ipad. The pages were tested vigorously to make
   sure that all the links were working.
 - The pages were tested vigorously to make sure that all the links were working.
 - the site was tested on if all the functions / interactive parts were working.
@@ -286,6 +286,6 @@ The project was deployed to GitHub Pages using the following steps...
 ### Acknowledgements
 
 - My Mentor for the feedback and support.
-- The trainers coaches of the field Hockeyclub Oranje-Rood, For the talks about what problems the run into while
+- The trainers and coaches of the field Hockeyclub Oranje-Rood, For the talks about what problems the run into while
   coaching.
 - The teams of field Hockeyclub Oranje-Rood for testing the website and its usefulness.
